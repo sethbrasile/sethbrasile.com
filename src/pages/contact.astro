@@ -203,10 +203,10 @@ const turnstileSiteKey =
         setStatus("Thanks — your message is on its way. I'll reply to the email you gave.", true);
       } else {
         const body = await res.json().catch(() => ({}));
-        setStatus(body.error || "Something went wrong. Email seth@tenorcreative.com directly.", false);
+        setStatus(body.error || "Something went wrong. Email seth.brasile@gmail.com directly.", false);
       }
     } catch {
-      setStatus("Network error. Email seth@tenorcreative.com directly.", false);
+      setStatus("Network error. Email seth.brasile@gmail.com directly.", false);
     } finally {
       submitBtn && (submitBtn.disabled = false);
     }

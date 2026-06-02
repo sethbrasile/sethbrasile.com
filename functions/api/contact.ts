@@ -17,7 +17,7 @@ const ALLOWED_ORIGINS = [
   "http://localhost:3000",
 ];
 
-const NOTIFY_TO = "seth@tenorcreative.com";
+const NOTIFY_TO = "seth.brasile@gmail.com";
 const FROM = "Seth Brasile <noreply@notify.pricklypearmarketingco.com>";
 
 const contactSchema = z.object({

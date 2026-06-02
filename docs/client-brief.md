@@ -10,7 +10,7 @@ directly from `designer-src/artifacts/sethbrasile`; items marked **(confirm)** o
 - **Name:** Seth Brasile
 - **Tagline:** "Seth builds & operates." — Engineer · IT/Security · Builder
 - **Location (public):** Durant, OK — **city/region only, no street address** (privacy)
-- **Email:** seth@tenorcreative.com
+- **Email:** seth.brasile@gmail.com (changed 2026-06-02; was seth@tenorcreative.com)
 - **Domain:** `sethbrasile.com` **(confirm)**
 - **Phone:** none published (intentional)
 - **Google Business Profile:** N/A (not a local business)
@@ -41,7 +41,7 @@ directly from `designer-src/artifacts/sethbrasile`; items marked **(confirm)** o
 - **Variant A: Resend → email, no CRM/GHL.** (Designer's Express/Postgres backend
   discarded; current form is a `mailto:` — replaced by CF Pages Function.)
 - Fields: name, email, subject, message (Zod schema exists, reuse it).
-- **Recipient: seth@tenorcreative.com** (DECIDED — single recipient, no cc)
+- **Recipient: seth.brasile@gmail.com** (changed 2026-06-02; single recipient, no cc)
 - `from`: PPMC shared sending domain (`noreply@notify.pricklypearmarketingco.com`)
 - n8n fallback: standard PPMC fault-tolerance layer.
 

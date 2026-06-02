@@ -145,7 +145,7 @@ not needed**. See `.gitignore`.
 ## Forms
 
 Contact form → `POST /api/contact` (CF Pages Function), **Variant A**: Turnstile
-verify (fail-secure) → Zod → **Resend** to seth@tenorcreative.com (primary) →
+verify (fail-secure) → Zod → **Resend** to seth.brasile@gmail.com (primary) →
 **n8n** HMAC-signed fallback via `waitUntil` (optimistic success). Env documented in
 `.env.example`; secrets live in the Pages dashboard. Turnstile site key defaults to
 CF's always-pass TEST key until `PUBLIC_TURNSTILE_SITE_KEY` is set in prod.
@@ -175,6 +175,13 @@ to satisfy WCAG AA. The designer-recreation-review should treat them as intentio
   axe `link-in-text-block` — in-prose links must be distinguishable without color.
 - **CV "Open to opportunities" email/PDF button row got `flex-wrap`** — was overflowing
   the viewport by 9px at 390px; now wraps.
+- **Hero copy shortened (2026-06-02, Seth-directed).** Dropped the "answer the on-call
+  line at 2am / most teams split that across three people" sentences; hero bio now ends
+  at "I write the code and own the infrastructure it runs on." Also "I cook on camera" →
+  "I build on camera." Designer-src still has the longer version — not drift.
+- **Published email swapped to seth.brasile@gmail.com (2026-06-02, Seth-directed)** across
+  Person JSON-LD, CV mailto, privacy page, contact-form recipient. Designer-src has
+  seth@tenorcreative.com — intentional, not drift.
 
 ## Open questions
 

@@ -104,7 +104,7 @@ test("server error path: surfaces the error message", async ({ page }) => {
     route.fulfill({
       status: 500,
       contentType: "application/json",
-      body: JSON.stringify({ error: "Delivery failed. Email seth@tenorcreative.com directly." }),
+      body: JSON.stringify({ error: "Delivery failed. Email seth.brasile@gmail.com directly." }),
     }),
   );
 
