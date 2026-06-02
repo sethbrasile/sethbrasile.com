@@ -75,9 +75,9 @@ directly from `designer-src/artifacts/sethbrasile`; items marked **(confirm)** o
   the PDF**; wire into `public/`, keep the download button. **(need: the actual file)**
 - Fonts: self-host Syne/Inter/Space Mono (Phase 3)
 
-## 9. Copy-review flags (Phase 1.22 → confirm in Phase 5)
+## 9. Copy-review flags — CONFIRMED (Phase 5, 2026-06-02)
 
-Marketing/factual claims to confirm true before launch:
+All marketing/factual claims below confirmed accurate by Seth. No edits needed.
 
 - **Stats band:** "12+ Years Exp", "75+ Direct Reports", "3.2k Endpoints Managed",
   "4 Regulated Industries" — all traceable to CV (casino floor 75+, DKB 2.5–3.2k
