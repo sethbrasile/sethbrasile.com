@@ -2,11 +2,11 @@
 
 Personal portfolio site for Seth Brasile (designer / developer).
 
-> **STATUS: transform in progress — built locally, not yet deployed.** The Astro
-> site has been scaffolded from `designer-src/` (Phases 3–4 done; full build green).
-> Remaining: Phase 5 copy-claim confirmation, Phase 6 tests, Phase 6.5 recreation
-> review, Phase 7 audits, and Phase 2/8 deploy (GitHub repo + Cloudflare Pages).
-> Progress tracked in `.transform-state.json`.
+> **STATUS: transform in progress — built + tested locally, not yet deployed.** The
+> Astro site is scaffolded from `designer-src/` (Phases 3–5 done; full build green) and
+> the Phase 6 Playwright suite passes (28/28, e2e + axe a11y). Remaining: Phase 6.5
+> recreation review, Phase 7 audits, and Phase 2/8 deploy (GitHub repo + Cloudflare
+> Pages). Progress tracked in `.transform-state.json`.
 
 ---
 
@@ -123,7 +123,11 @@ not needed**. See `.gitignore`.
 - `npm run dev` — Astro dev server (localhost:4321)
 - `npm run build` — `astro check` (typecheck) + `astro build` → `dist/`
 - `npm run preview` — serve the production build locally
-- Tests (Phase 6): Playwright against the preview build (not dev — toolbar artifacts)
+- `npm test` — Playwright e2e + axe a11y against the preview build (Phase 6). Runs
+  on **port 4399** (not default 4321 — collides with other local projects' previews).
+  `npm run test:ui` for the UI runner, `npm run test:report` for the last HTML report.
+  Specs in `tests/e2e/`. Tests build+preview automatically (`reuseExistingServer: !CI`,
+  never the dev server — toolbar artifacts break asserts).
 
 ## Repo map
 
@@ -157,6 +161,20 @@ CF's always-pass TEST key until `PUBLIC_TURNSTILE_SITE_KEY` is set in prod.
   button 404s until Seth drops the file.
 - n8n fallback for the contact form is coded but unconfigured (`N8N_WEBHOOK_URL`
   unset) — Resend-only until set up at deploy.
+
+## Intentional deviations from designer-src (Phase 6.5 input — NOT drift)
+
+These are deliberate changes from `designer-src/artifacts/sethbrasile`, made in Phase 6
+to satisfy WCAG AA. The designer-recreation-review should treat them as intentional:
+
+- **`--muted-foreground` darkened 46.1% → 42%** (light mode only, `global.css`). The
+  shadcn default rendered #73737c, failing 4.5:1 contrast on the page bg (4.49) and the
+  CV's translucent sticky filter bar (4.2). 42% clears AA everywhere. Visually a hair
+  darker muted gray; dark mode unchanged.
+- **Home `byteMyCache` inline link now has a persistent underline** (was `hover:underline`).
+  axe `link-in-text-block` — in-prose links must be distinguishable without color.
+- **CV "Open to opportunities" email/PDF button row got `flex-wrap`** — was overflowing
+  the viewport by 9px at 390px; now wraps.
 
 ## Open questions
 
