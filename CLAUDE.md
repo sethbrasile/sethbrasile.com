@@ -156,7 +156,12 @@ CF's always-pass TEST key until `PUBLIC_TURNSTILE_SITE_KEY` is set in prod.
 
 - `@fontsource` emits 22 woff2 subsets (all languages). Unicode-range gated → no
   load penalty, but could trim to latin-only to declutter `dist/`.
-- 6 moderate npm advisories (transitive dev tooling) — audit/resolve in Phase 7.
+- 6 moderate npm advisories (Phase 7 triage): 5 are dev-only `astro check` tooling
+  (yaml / yaml-language-server / volar / @astrojs/language-server / @astrojs/check —
+  never shipped). The 6th is `astro` itself (`define:vars` `</script>` XSS) — **not
+  exploitable here, we don't use `define:vars`**. Safe `npm audit fix` is a no-op; the
+  real fix needs `--force` (breaking). Left as-is; revisit when astro ships a clean
+  non-breaking patch. None ship to the browser or affect the static output.
 - ~~Résumé PDF not yet provided~~ — **resolved 2026-06-02**: `public/Seth_Brasile_Resume.pdf`
   added (source: `~/Documents/GitHub/resume/output/Seth-Brasile-Resume.pdf`). CV download works.
 - n8n fallback for the contact form is coded but unconfigured (`N8N_WEBHOOK_URL`
