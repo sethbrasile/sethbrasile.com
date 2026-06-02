@@ -1,0 +1,472 @@
+# Build Brief: sethbrasile.com — Personal Portfolio + CV
+
+**Read this first:** This document gives you the *goals, requirements, supporting
+facts, and copy direction* for a new website. It deliberately says **nothing about
+visual design, layout, color, or components** — those decisions are 100% yours. Use
+your own judgment to make it beautiful, fast, and distinctive.
+
+Two more rules about the writing:
+1. **Write the marketing copy yourself.** Below you'll find angles, value props, and
+   raw facts — not finished sentences. Do **not** paste my phrasings verbatim. Turn
+   the points into your own polished copy, following the Voice Rules in §4.
+2. **Everything factual must come from §6 (The Data).** Do not invent achievements,
+   metrics, employers, or credentials. If a fact isn't in §6, leave it out.
+
+---
+
+## 1. What we're building & why
+
+A personal brand site for **Seth Brasile** at **sethbrasile.com**, replacing an old,
+aspirational single-page site. It is a professional portfolio that showcases his
+projects, work history, and skills, and **hosts his CV** (the CV currently lives at
+bytemycache.com/cv and is being moved here).
+
+**Primary goal — drive qualified leads to two destinations, in this priority order:**
+
+1. **Primary CTA → his marketing agency, PPMC (Prickly Pear Marketing Co)** at
+   **https://pricklypearmarketing.co**, for **SEO and marketing** work.
+2. **Secondary CTA → hire Seth directly** for **custom app development and custom
+   business / automation development.** This is Seth personally — present it as
+   "work with Seth," a direct contact path. (Do **not** brand this as a separate
+   company; no "Tenor Creative" anywhere.)
+
+**Secondary goal — credibility & recruiting.** Seth is also open to the right
+fractional / contract / advisory engagement or full-time role, so the CV must also
+serve recruiters and hiring managers (see §5 CV page requirements).
+
+**What success looks like:** a visitor quickly understands who Seth is and the depth
+behind him, then either (a) heads to PPMC for marketing/SEO, (b) contacts Seth for
+build/automation work, or (c) reads/downloads the CV. The site should also own the
+"Seth Brasile" search result and read well to AI assistants (see §7–8).
+
+---
+
+## 2. Audiences & their journeys
+
+Design the content so each of these lands fast:
+
+- **Small/medium business owner needing marketing or SEO** → must be guided to PPMC.
+  Speaks plain business English, not jargon. Cares about results and trust.
+- **Founder / business needing a custom app, SaaS, or automation built** → must be
+  guided to contact Seth directly. More technical, evaluating competence and judgment.
+- **Recruiter / hiring manager / fractional-CTO seeker** → wants the CV: depth,
+  scope, scale, downloadable resume.
+- **Peers / technical readers** (secondary) → projects, writing, homelab; reinforces
+  authority and links out to his blog/YouTube.
+
+Make the two commercial CTAs unmistakable and persistent. The CV path can be one
+click from the home page but doesn't need to dominate the hero.
+
+---
+
+## 3. Positioning & key messages (angles — write your own copy)
+
+**The core differentiator** (this is the whole story — build the hero around it):
+Seth is an **engineer who also spent the better part of a decade running enterprise
+IT and security.** He doesn't just write software — he has been the person on the
+wrong end of the on-call line at 2am, and he's a business owner who lives with P&L.
+So he **builds, secures, and operates** — and he codifies, versions, reviews, and
+secures the things most shops do by hand.
+
+Supporting angles to draw on (pick what fits each section; rephrase freely):
+
+- **12+ years across full-stack development, DevOps, and regulated-industry IT** —
+  casinos, healthcare, manufacturing, government.
+- **Builder with receipts:** architected a startup platform from zero that turned
+  profitable in year one; ships production-grade SaaS solo today on a modern edge stack.
+- **Operator, not just a coder:** led incident response across a regulated client
+  base; 2-year PCI-DSS subject-matter expert; built security/compliance automation
+  across thousands of endpoints.
+- **Leader with real authority:** hired and led a team of 6 engineers; managed 75+
+  direct reports on a casino floor; co-owns two businesses and a real-estate
+  partnership.
+- **Honesty as a feature:** he tells you what was a POC vs. production, and is
+  "audit-experienced, not yet audit-certified — and will tell you exactly which."
+  This candor is a selling point; let it show in tone.
+
+**CTA framing (angles, not final copy):**
+- PPMC CTA: position PPMC as the team to call for *getting found and getting
+  customers* — local SEO, marketing, web. Frame Seth as the technical backbone behind
+  it so the referral carries his credibility.
+- Hire-Seth CTA: position direct work as *"need something built or automated that
+  off-the-shelf can't do?"* — custom apps, SaaS, business process automation, AI
+  tooling. The proof is the projects in §6.
+
+**"Beyond the keyboard" (keep it light, ~one short section or strip):** Seth is also
+a homelabber, maker, cook/content creator (YouTube), musician, and woodworker. Use a
+*small, tasteful* human touch for memorability — do **not** let it become a co-equal
+pillar or dilute the professional, conversion-focused thrust.
+
+---
+
+## 4. Voice & copy rules
+
+Write in Seth's voice: **confident, concrete, technically literate, zero fluff.**
+Mix short impact lines with longer detail lines.
+
+**Do:**
+- Concrete specificity over vague claims — name actual tools, scale, dollar amounts,
+  team sizes ("led a team of 6," "75+ direct reports," "2,500–3,200 endpoints").
+- Plain, strong verbs: built, shipped, designed, led, architected, secured.
+- Honest scope: say "proof-of-concept" when it was a POC, "production" when it shipped.
+- Lead with the outcome where one exists.
+
+**Don't (banned):**
+- No fake enthusiasm: no "passionate about," "rockstar," "synergy," "leverage,"
+  "spearhead," "results-driven," "detail-oriented," "self-starter," "team player."
+- No "responsible for" / "helped" — use the active verb for what he actually did.
+- No "various"/"multiple" without a number.
+- No buzzword-salad headers. If a line sounds like a LinkedIn cliché, rewrite it.
+
+Tone calibration: technically dense and credible for the dev/recruiter audience, but
+the marketing/PPMC-facing copy must stay in **plain business English** a non-technical
+SMB owner reads comfortably.
+
+---
+
+## 5. Required pages & content (content requirements — not layout)
+
+You decide the structure, navigation, and number of pages. At minimum the site must
+cover:
+
+**Home / landing**
+- Hero that lands the §3 core differentiator and makes the two CTAs obvious.
+- A scannable "what Seth does" overview that splits cleanly toward the two CTAs
+  (marketing/SEO → PPMC; custom build/automation → contact Seth).
+- Proof strip: key numbers/highlights from §6 (years, team sizes, scope).
+- Featured projects (subset of §6 projects) with links.
+- Light "beyond the keyboard" touch (§3).
+- Links out to byteMyCache (blog/videos), GitHub, YouTube, LinkedIn.
+
+**Work / Projects**
+- The projects in §6, each with a short outcome-focused blurb, tech stack, and link
+  where one exists. Group or filter however you like.
+
+**CV / Résumé** (this is the page migrating from bytemycache.com/cv — make it strong)
+- Full professional history from §6 (all roles, dated, with bullets).
+- Skills by category; certifications; education.
+- **Interactive "lens" toggle:** let the visitor filter the CV by **Developer /
+  IT-Security / Leadership** perspective. Every role, highlight, skill, and project
+  in §6 is tagged with one or more of these lenses — use those tags to show/hide or
+  re-rank content when a lens is selected. Default view shows everything.
+- **Downloadable PDF résumé** (ATS-friendly: real text, single column, standard
+  headings, no images-as-text). A "Download résumé (PDF)" action.
+- Clear contact + "open to opportunities" signal for recruiters (fractional /
+  contract / advisory / the right full-time role).
+
+**Contact**
+- Simple contact form + direct email (**seth@tenorcreative.com**).
+- Make explicit the two routes: "Marketing or SEO? → PPMC" (link out) and
+  "Something to build or automate? → message Seth."
+
+---
+
+## 6. The Data (facts to draw from — do not invent beyond this)
+
+### Identity & contact
+- Name: **Seth Brasile**
+- Label: Engineer · IT/Security · Builder
+- Location: **Durant, OK**
+- Email: **seth@tenorcreative.com**
+- GitHub: https://github.com/sethbrasile
+- YouTube: https://youtube.com/@byteMyCache
+- LinkedIn: https://www.linkedin.com/in/sethbrasile-43a315a0
+- Tech blog / videos / store (separate property — link to it, don't rebuild it):
+  **https://bytemycache.com**
+- Agency (Primary CTA target): **https://pricklypearmarketing.co**
+
+### Intro (multi-angle — use as raw material)
+- **General:** Engineer who also spent ~a decade running enterprise IT and security —
+  builds software *and* has been on-call at 2am. 12+ years across full-stack dev,
+  DevOps, and regulated-industry IT (casinos, healthcare, manufacturing, government).
+  Codifies, versions, reviews, and secures what most shops do by hand.
+- **Dev:** Full-stack engineer and architect. Built BetterLife's entire platform from
+  zero (frontend, backend, ML, databases, CI/CD) and led the team that ran it; ships
+  production-grade SaaS solo today on a modern edge stack.
+- **IT:** 7+ years enterprise IT, security-first / automate-everything bias. Led the
+  PrintNightmare response across a regulated MSP client base; 2-year PCI-DSS SME;
+  built an mTLS RMM platform in Go. Audit-experienced, not yet audit-certified.
+- **Leader:** Managed 75+ direct reports on a casino floor (real HR ownership,
+  discipline included); hired and led 6 engineers at a startup profitable in year one;
+  co-owns two businesses and a real-estate partnership — P&L is not abstract.
+
+### Highlights (proof points; lens tags in brackets)
+- Architected BetterLife's members platform from zero — profitable in year one,
+  funding a $500K first-year donation to the Tim Tebow Foundation's anti-trafficking
+  work. [dev, it, leader]
+- Led the PrintNightmare response across a regulated MSP client base — escalated from
+  PowerShell/GPO mitigations to eliminating traditional print servers entirely. [it, leader]
+- Hired and led a team of 6 engineers (frontend, backend, ML, UI/UX) — interviews,
+  hiring decisions, technical direction, code review. [dev, leader]
+- Managed 75+ direct reports at peak on the floor of the world's largest casino —
+  scheduling, performance management, discipline, Title 31 / IRS compliance. [it, leader]
+- Two years as PCI-DSS subject-matter expert and lead audit preparer — designed an
+  enterprise-wide live PCI device-tracking system across hundreds of POS devices. [it, leader]
+- Built a proof-of-concept MSP code-delivery + RMM platform in Go — cross-platform
+  agent (Linux/Mac/Windows) talking to a server-side broker over gRPC + mutual TLS. [dev, it]
+- Designed and shipped policy-as-code AI governance for an agency — version-controlled
+  CLAUDE.md set, declarative scheduled agents, per-repo opt-in, drift detection,
+  secret-scan-on-push. [dev, it, leader]
+
+### Work history (all roles — for the CV page)
+
+1. **Prickly Pear Marketing Co (PPMC)** — Co-Founder · Solutions Engineer · Primary
+   Developer · Durant, OK · Oct 2025–Present. [dev, it, leader]
+   Co-owned full-service marketing agency; owns the technical side (web, SEO,
+   automation, internal tooling), shares agency leadership.
+   - Built the internal AI-tool governance + scheduled-agent system the partner team runs on.
+   - Built and operates the web + SEO delivery pipeline used across client engagements.
+   - Co-owner equity, P&L, and decision authority.
+
+2. **Tenor Creative LLC** — Founder · Solutions Engineer · Primary Developer ·
+   Durant, OK · Sep 2024–Present. [dev, leader]
+   *(For CV/history only — do NOT surface Tenor as a brand or CTA elsewhere on the site.)*
+   Solo shop feeding engineering work into PPMC; static sites for SMBs focused on
+   technical SEO, performance, accessibility.
+   - Builds static sites for SMBs — technical SEO, performance, accessibility.
+   - Built tooling that lets one person deliver premium static sites at a low price point.
+   - Owns full P&L for the entity.
+
+3. **BetterLife** — Senior Full-Stack Engineer · DevOps · Software Systems Architect ·
+   Kihei, HI (remote) · Mar 2023–Present. [dev, it, leader]
+   Founding engineer/architect for a small-groups ("pods") matchmaking platform; built
+   v1 from zero, led the v2 migration to cloud-native SaaS, Q&A advisory since ~mid-2024.
+   - Designed and owned the entire v1 platform — frontend, backend, ML, databases, CI/CD.
+   - Hired and led a team of 6 (2 frontend, 1 backend, 1 senior frontend + UI/UX, 1 ML).
+   - Built an R-based ML matchmaking system pairing users with pods that fit.
+   - Built the entire auth stack on Auth0 (Okta) — production SSO, MFA, full lifecycle.
+   - Led the v2 migration to cloud-native SaaS, deprecating most custom dev once
+     competitive tooling existed and the business pivoted to 1:1 coaching.
+   - Stack: Nuxt, Vercel, FaunaDB, Stripe, PostgreSQL (Neon), InfluxDB 2.0, Heroku, Go,
+     Grafana, Python, R, reticulate, Hetzner, Dokku/Docker.
+
+4. **DKBinnovative** — Centralized Services Automation Specialist (IT DevOps) ·
+   Frisco, TX · Jun 2021–Mar 2023. [dev, it, leader]
+   Designed/built cybersecurity + compliance automation across enterprise
+   Windows/Linux/Mac fleets (2,500–3,200 endpoints) in healthcare and manufacturing.
+   - Daily PowerShell dev for workstation/service-management tooling; Go tools to
+     orchestrate it and aggregate reporting.
+   - Built a POC MSP code-delivery + RMM platform in Go — cross-platform agent +
+     server-side broker over gRPC + mutual TLS.
+   - Led PrintNightmare response across the client base — PowerShell/GPO mitigations,
+     then eliminated traditional print servers via centralized print management.
+   - Migrated all delivered PowerShell to a GitHub source-of-truth model — scripts run
+     in-memory from raw URLs, removing local-file tampering surface and forcing PR review.
+   - Compliance remediation against HIPAA / NIST / CMMC-adjacent scans from a formal
+     security team.
+   - Automated distributed enterprise Windows update/upgrade management.
+
+5. **The Chickasaw Nation** — Retail Systems Analyst · Ada, OK · Oct 2016–Jun 2021. [it, leader]
+   One of two go-to experts for all retail + PCI payment systems across a diverse
+   property portfolio (hundreds of devices) — casinos, c-stores, gas stations,
+   restaurants, boutique retail.
+   - Two-year PCI-DSS subject-matter expert and lead preparer for PCI audits.
+   - Designed/implemented enterprise-wide payment + POS device tracking for PCI compliance.
+   - Led many retail-systems initiatives end-to-end as the domain specialist.
+
+6. **Community First Investments** — Co-Founder & Operating Partner (Real Estate) ·
+   50/50 partnership · 2021–Present. [leader]
+   Real-estate investment partnership; owner-side capital stewardship, full-lifecycle
+   ownership (acquire, renovate, operate, exit).
+   - Acquired a distressed 12-unit apartment complex; led a multi-phase to-the-studs
+     renovation to fully renovated and fully occupied.
+   - Hired and managed GC and subcontractors — hands-on, not a passive investor.
+
+7. **Greeting Card Collection / Deep Space Robots** — Web Developer · Dallas/Fort
+   Worth · Apr 2015–Jul 2016. [dev]
+   Frontend dev in JavaScript / Ember.js.
+   - Built a suite of tools letting clients build customized white-labeled greeting-card sites.
+   - Hired directly by the Deep Space Robots client to continue building/maintaining.
+
+8. **Koddi** — Junior Web Developer · Fort Worth, TX · Sep 2014–Apr 2015. [dev]
+   PHP + JavaScript, junior full-stack on a lodging/booking/travel analytics and
+   ad-management platform.
+
+9. **The Chickasaw Nation** — IT Client Services Technician · Southern Region, OK ·
+   Jun 2012–Aug 2013. [it]
+   Remote + on-site IT support for 3,000+ users across 28 properties; frequently the
+   lone on-site engineer, responsible for 20+ data centers and IDFs in rotation.
+   - Full-stack ownership (OS, software, lifecycle) of hundreds of facility
+     workstations; first-responder infrastructure support across the gaming floor.
+   - PC imaging, deployments, Cisco VOIP, AD/Exchange, SCSM ticketing.
+
+10. **The Chickasaw Nation** — Electronic Gaming Floor Supervisor · Oklahoma ·
+    Aug 2008–Aug 2011. [leader, it]
+    Managed 75+ technical-support / customer-service reps at a time on the floor of the
+    world's largest casino.
+    - Real people-management — scheduling, performance management, hiring input, discipline.
+    - Enforced federal Title 31 (AML reporting) and IRS withholding law daily; handled
+      sensitive PII / 1099 / tax-prep flows.
+    - Vendor + cross-department operations coordination.
+
+### Projects (for portfolio + CV; link where a URL exists)
+- **margin-check.com** — https://margin-check.com — Solo-built SaaS; ingests Etsy CSV
+  exports and surfaces real per-listing profit margins after all fees. Pre-launch.
+  Stack: Next.js 16, Cloudflare Workers (OpenNext), Neon + Drizzle + Hyperdrive,
+  Better Auth, Stripe, Inngest. [dev]
+- **potluck-planner.com** — https://potluck-planner.com — Solo-built event-coordination
+  SaaS; passkeys/WebAuthn, OAuth, magic links, payments, email/SMS, 10 background job
+  handlers. Production-ready. Stack: Next.js 15, Better Auth, Neon + Drizzle,
+  Cloudflare Workers, Stripe, Resend, Twilio, Inngest. [dev]
+- **idea-machine** — Team RAG with a dual-database privacy boundary by design — shared
+  topics in Postgres, private topics in local SQLite that never touches shared infra;
+  data classification enforced at the storage layer. Stack: Python, Postgres (Neon),
+  SQLite, trafilatura, yt-dlp, cryptography. [dev, it]
+- **ppmc-claude-routines-and-schedules** — Group-policy-as-code for an agency's AI
+  usage — declarative routines, version-controlled CLAUDE.md set, drift detection,
+  dev-mode guards, pre-push secret scanning. Stack: Bash, YAML, Claude Code, git. [it, dev, leader]
+- **EZ Web Audio** — https://github.com/sethbrasile/ez-web-audio — Framework-agnostic
+  Web Audio API wrapper; modern successor to ember-audio. Authored + maintained.
+  Stack: TypeScript, Web Audio API. [dev]
+- **Justice For Us — White House SXSL (2016)** —
+  https://techcrunch.com/2016/10/03/white-houses-sxsl-shows-what-its-like-to-be-in-the-criminal-justice-system/
+  — Engineering contributor on an interactive sentencing exhibit at the White House
+  South by South Lawn; authored the open-source Web Audio library that powered its
+  interactive elements. (TechCrunch credited the lead developer.) Stack: JavaScript,
+  Ember, ember-audio. [dev]
+- **MSP RMM Platform (DKB POC)** — Cross-platform agent (Linux/Mac/Windows) +
+  server-side message broker over gRPC + mutual TLS. POC replacement for traditional
+  RMM tooling. Stack: Go, gRPC, mTLS. [it, dev]
+- **Immutable Reverse-Proxy Edge** — Fedora CoreOS immutable reverse proxy at the
+  network edge, terminating SSL on the LAN side for IDS/IPS inspection. Deployed in
+  production at DKB; documented in a 4-part series. Stack: Fedora CoreOS, NGINX,
+  fail2ban, Cloudflare. [it]
+
+### Writing / publications (link to byteMyCache)
+- "How To Run Multiple Dockerized, Proxied, SPDY'd, and Pagespeedified Ghost Blogs with
+  4 Commands" — **featured in the official Docker newsletter.**
+- "Protect Your Services with an Immutable Reverse Proxy, Fail2Ban, and Cloudflare"
+  (4-part series) — same architecture deployed in production at DKB.
+- "Why Laravel Image Handling Still Sucks and How to Fix It."
+
+### Homelab (use for the "beyond the keyboard" / credibility touch)
+Real infrastructure relied on daily, treated as production — documented, with formal
+incident reports written even for self-only outages:
+- Proxmox / hypervisor hosts; Docker-first deployment (since Docker's earliest days).
+- Zero-trust ingress via Cloudflare Tunnels — no inbound ports exposed.
+- (Previously) Fedora CoreOS immutable reverse proxy terminating SSL on the LAN side.
+- Split-brain DNS via self-hosted Technitium.
+- Self-hosted LLM + agent setup on a local GPU rig.
+- Self-hosted Immich, Mealie, Plex; custom Dockerfiles for patched/niche images.
+- Formal post-mortem incident reports.
+
+### Skills (by group; lens tags in brackets — use for the CV lens toggle)
+- **Languages:** TypeScript [dev], JavaScript [dev], PowerShell [it], Go [dev,it],
+  Python [dev,it], PHP [dev], R [dev], SQL [dev,it]
+- **Frontend / Web:** Nuxt 3 [dev], Vue 3 [dev], Ember.js [dev], React [dev],
+  Tailwind CSS [dev], Web Audio API [dev]
+- **Backend / Platform:** Node/Express [dev], gRPC / mutual TLS [dev,it],
+  REST / GraphQL [dev], Better Auth [dev], Stripe [dev]
+- **Cloud / DevOps / Infra:** Docker/Compose/Dokku [dev,it], CI/CD (GitHub Actions)
+  [dev,it], Cloudflare (Workers, Tunnels, DNS) [dev,it], Microsoft Azure [it],
+  NGINX / reverse-proxy hardening [it], Immutable infrastructure [it]
+- **Enterprise IT / Sysadmin:** Active Directory [it], Group Policy (GPO) [it],
+  SCCM / SCSM [it], Intune [it], ConnectWise Automate (RMM) [it],
+  M365 / Google Workspace admin [it], Okta / Auth0 [it,dev]
+- **Security / Compliance:** PCI-DSS (2-yr SME) [it], Title 31 / IRS [it], HIPAA [it],
+  NIST / CMMC-adjacent [it], PrintNightmare response [it], Zero-trust ingress [it],
+  IDS/IPS + split-brain DNS [it]
+- **Data / ML:** R + Python (production ML) [dev], reticulate [dev], Grafana [dev,it],
+  InfluxDB [dev,it]
+- **Leadership:** Hired + led 6 engineers [leader], Managed 75+ reports [leader],
+  Code review / mentoring [leader,dev], Vendor management [leader], P&L ownership [leader]
+
+### Education
+- Mott Community College — Coursework
+- Lapeer East High School — High School Diploma (1999–2003)
+
+### Certifications
+- CompTIA A+ — University of North Texas testing center — Feb 2015
+- Programming for Everybody (Python) — University of Michigan (Coursera) — Aug 2014
+- The Data Scientist's Toolbox — Johns Hopkins University (Coursera) — Aug 2014
+
+---
+
+## 7. SEO requirements
+
+The hard commercial terms ("SEO agency," etc.) are PPMC's job — this site's SEO job is
+to **own the personal brand, capture credibility/long-tail discovery, and pass authority
+to PPMC.** Implement:
+
+- **Unique, descriptive `<title>` and meta description per page.** Home title should
+  include "Seth Brasile" + a concise descriptor (engineer / builder / Durant, OK).
+- **One clear `<h1>` per page; logical `<h2>/<h3>` hierarchy** mirroring content.
+- **Target topics / long-tail intents** to weave in naturally (don't keyword-stuff):
+  custom business automation developer; full-stack engineer / software systems
+  architect; SaaS developer for hire; enterprise IT & security automation; AI tooling /
+  automation consultant; Oklahoma / Durant OK developer. Plus credibility topics that
+  match his writing: PCI-DSS, PrintNightmare response, immutable reverse proxy,
+  policy-as-code AI governance, Web Audio API.
+- **Dofollow links to PPMC (pricklypearmarketing.co)** from relevant body copy and the
+  primary CTA — this site should pass authority/relevance to the agency.
+- **Clean, descriptive URLs** (e.g. /work, /cv, /contact).
+- **XML sitemap + robots.txt;** canonical tags; no orphan pages.
+- **Fast Core Web Vitals** (Seth is a performance/accessibility specialist — the site
+  must walk the talk): optimize LCP/CLS/INP, lazy-load below-the-fold media, compress
+  images, minimal blocking JS.
+- **Descriptive, keyword-aware `alt` text** on every meaningful image.
+- **Open Graph + Twitter Card** tags with a social preview image for every page so
+  shared links render cleanly.
+- **Privacy-friendly analytics** (Plausible preferred — matches byteMyCache) rather
+  than Google Analytics.
+
+---
+
+## 8. GEO / structured data (be citable by AI assistants)
+
+The site should read cleanly to LLM-powered search (AI Overviews, ChatGPT, Perplexity):
+
+- **JSON-LD `Person`** on the home page: name "Seth Brasile"; jobTitle; address /
+  areaServed (Durant, OK); `email`; `sameAs` linking GitHub, YouTube, LinkedIn,
+  byteMyCache, and PPMC; `knowsAbout` populated from the §6 skills; `worksFor` /
+  affiliation referencing PPMC.
+- **JSON-LD `ProfilePage`** wrapping the CV page; consider `SoftwareSourceCode` /
+  `CreativeWork` entries for the open-source projects.
+- Write at least a few **self-contained, factual passages** (a short "About Seth" /
+  FAQ-style block answering "Who is Seth Brasile?", "What does he build?", "How do I
+  hire him or his agency?") so an assistant can lift an accurate answer and the correct
+  next step (PPMC for marketing, Seth direct for builds).
+
+---
+
+## 9. Technical & accessibility requirements
+
+- **Responsive** and excellent on mobile.
+- **Accessible to WCAG 2.1 AA:** semantic HTML, keyboard-navigable, visible focus
+  states, sufficient contrast, proper labels/alt text, respects reduced-motion. (This
+  is part of Seth's professional brand — it must be genuinely accessible, not nominally.)
+- **Performance-first** (see §7 CWV).
+- Domain will be **sethbrasile.com**.
+- Stack/framework is your call — but favor something fast and static-friendly.
+
+---
+
+## 10. Contact handling
+
+- Contact form submissions and the direct email both go to **seth@tenorcreative.com**.
+- (CRM wiring is out of scope for now — a working form that emails Seth, or a reliable
+  form service, is fine. Note in your output how submissions are delivered so it can be
+  re-wired to a CRM later.)
+- Always present the two routes clearly: **marketing/SEO → PPMC** (outbound link) and
+  **build/automation → message Seth.**
+
+---
+
+## 11. Out of scope / do-not
+
+- **Do not rebuild or replace byteMyCache** (bytemycache.com stays as Seth's blog /
+  videos / store) — only the CV is moving to sethbrasile.com. Link to byteMyCache as
+  the blog/content hub.
+- **Do not surface "Tenor Creative" as a brand or CTA.** It may appear only as an
+  employer line in the CV work history. The "hire Seth directly" path is Seth
+  personally, not a company.
+- **Do not invent facts.** Everything factual comes from §6.
+- No art-direction constraints from me — design is yours.
+
+---
+
+## 12. Assets Seth will provide (flag these as needed)
+- Professional headshot / photo(s).
+- A social-preview / OG image (or generate a tasteful text-based one).
+- Final résumé PDF (or generate from the §6 data in an ATS-friendly layout).
+- Confirmation of the contact-form delivery method before launch.

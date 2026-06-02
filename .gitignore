@@ -1,26 +1,22 @@
+# --- Dependencies / build artifacts ---
+node_modules/
+dist/
+.wrangler/
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-
-# testing
-/coverage
-
-# next.js
-/.next/
-/out/
-
-# production
-/build
-
-# misc
-.DS_Store
+# --- Env / secrets ---
 .env
-.env.local
-.idea
+.env.*
+!.env.example
 
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# --- brochure-site-transform working artifact (do NOT commit) ---
+.transform-state.json
+
+# --- designer-src is TRACKED (skill requirement) EXCEPT regenerable caches ---
+# .local/ is a vendored pnpm content-addressable store (~428M) — install cache,
+# not designer source. Everything else under designer-src/ stays committed.
+designer-src/.local/
+designer-src/**/node_modules/
+designer-src/**/dist/
+
+# --- OS cruft ---
+.DS_Store

@@ -1,0 +1,33 @@
+Final, approved copy for the hero, About, and "beyond the keyboard" sections. Use this verbatim — do not paraphrase, expand, or "improve" it. Match this voice everywhere else on the site.
+
+  HERO
+
+  Title (keep as-is): Seth builds & operates.
+
+  Body:
+
+  ▎ I'm a software engineer who also spent the better part of a decade running enterprise IT and security. So I write the code, own the infrastructure it runs on, and answer the on-call line when it
+  ▎ breaks at 2am — usually for systems I built myself. Most teams split that across three people. The fact that it's one person is the whole point.
+
+  (Then the two CTAs.)
+
+  ABOUT
+
+  ▎ I've been building software since 2013, and running enterprise IT and security for most of the years around it — twelve-plus years across casinos, healthcare, manufacturing, and government. The
+  ▎ kind of regulated places where "it works on my machine" gets you a compliance finding.
+  ▎
+  ▎ The short version: I built BetterLife's entire platform from zero — frontend, backend, ML, databases, CI/CD — and hired and led the team of six that ran it. It turned profitable in its first
+  ▎ year. Before that I spent two years as a PCI-DSS subject-matter expert, led the PrintNightmare response across a regulated client base, and built security and compliance automation across
+  ▎ roughly three thousand endpoints. Today I ship production SaaS solo on a modern edge stack, and I co-own a marketing agency.
+  ▎
+  ▎ What ties it together: I codify, version, review, and secure the things most shops still do by hand. I'll tell you straight when something was a proof-of-concept and when it was production. I
+  ▎ treat my own homelab like production — incident reports and all. And I write the kind of code I'd want to inherit.
+  ▎
+  ▎ If you found your way here, you probably already know some of this. So tell me what you're trying to build, or fix.
+
+  BEYOND THE KEYBOARD
+
+  ▎ When I'm not shipping code: I run a homelab I treat like production — yes, I write incident reports for outages that only affect me. I cook on camera over at byteMyCache. I build things out of
+  ▎ wood, play guitar, and occasionally build the guitar. And I co-own a real-estate partnership, because apparently three businesses wasn't enough.
+  ▎
+  ▎ Same instinct every time: take it apart, understand it, make it work better.
