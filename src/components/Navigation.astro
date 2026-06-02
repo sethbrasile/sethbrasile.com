@@ -1,0 +1,142 @@
+---
+import { Icon } from "astro-icon/components";
+
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/work", label: "Work" },
+  { href: "/cv", label: "CV" },
+  { href: "/contact", label: "Contact" },
+];
+
+// Normalize trailing slash for active-state comparison.
+const current = Astro.url.pathname.replace(/\/+$/, "") || "/";
+const isActive = (href: string) => (href === "/" ? current === "/" : current === href);
+---
+
+<header
+  class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+>
+  <div class="container mx-auto flex h-16 max-w-5xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <a href="/" class="font-display text-xl font-bold tracking-tight">
+      SB<span class="text-muted-foreground">.</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-6">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            aria-current={isActive(link.href) ? "page" : undefined}
+            class:list={[
+              "relative py-2 text-sm font-medium transition-colors hover:text-primary",
+              isActive(link.href) ? "text-foreground" : "text-muted-foreground",
+            ]}
+          >
+            {link.label}
+            {isActive(link.href) && (
+              <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-foreground" />
+            )}
+          </a>
+        ))
+      }
+      <button
+        id="theme-toggle"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+        class="text-muted-foreground hover:text-foreground transition-colors"
+      >
+        <Icon name="lucide:sun" class="size-5 hidden dark:block" aria-hidden="true" />
+        <Icon name="lucide:moon" class="size-5 block dark:hidden" aria-hidden="true" />
+      </button>
+    </nav>
+
+    <!-- Mobile controls -->
+    <div class="flex items-center gap-2 md:hidden">
+      <button
+        id="theme-toggle-mobile"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+        class="p-2 text-muted-foreground hover:text-foreground"
+      >
+        <Icon name="lucide:sun" class="size-5 hidden dark:block" aria-hidden="true" />
+        <Icon name="lucide:moon" class="size-5 block dark:hidden" aria-hidden="true" />
+      </button>
+      <button
+        id="mobile-menu-toggle"
+        type="button"
+        class="p-2 -mr-2 text-muted-foreground hover:text-foreground"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <Icon id="menu-icon" name="lucide:menu" class="size-5" aria-hidden="true" />
+        <Icon id="close-icon" name="lucide:x" class="size-5 hidden" aria-hidden="true" />
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden border-b border-border/40 bg-background px-4 py-4 md:hidden">
+    <nav class="flex flex-col space-y-4">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            aria-current={isActive(link.href) ? "page" : undefined}
+            class:list={[
+              "text-base font-medium",
+              isActive(link.href) ? "text-foreground" : "text-muted-foreground",
+            ]}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const menuBtn = document.getElementById("mobile-menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  const menuIcon = document.getElementById("menu-icon");
+  const closeIcon = document.getElementById("close-icon");
+
+  function setMenu(open: boolean) {
+    if (!menu || !menuBtn) return;
+    menu.classList.toggle("hidden", !open);
+    menuBtn.setAttribute("aria-expanded", String(open));
+    menuIcon?.classList.toggle("hidden", open);
+    closeIcon?.classList.toggle("hidden", !open);
+  }
+  menuBtn?.addEventListener("click", () => {
+    setMenu(menu?.classList.contains("hidden") ?? false);
+  });
+  // Close on link tap + Escape
+  menu?.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") setMenu(false);
+  });
+
+  // Theme toggle (desktop + mobile)
+  function syncPressed() {
+    const dark = document.documentElement.classList.contains("dark");
+    document
+      .querySelectorAll("#theme-toggle, #theme-toggle-mobile")
+      .forEach((b) => b.setAttribute("aria-pressed", String(dark)));
+  }
+  function toggleTheme() {
+    const dark = document.documentElement.classList.toggle("dark");
+    try {
+      localStorage.setItem("theme", dark ? "dark" : "light");
+    } catch (e) {}
+    syncPressed();
+  }
+  document.getElementById("theme-toggle")?.addEventListener("click", toggleTheme);
+  document.getElementById("theme-toggle-mobile")?.addEventListener("click", toggleTheme);
+  syncPressed();
+</script>

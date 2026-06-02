@@ -1,0 +1,33 @@
+---
+const year = new Date().getFullYear();
+
+const socials = [
+  { href: "https://github.com/sethbrasile", label: "GitHub" },
+  { href: "https://youtube.com/@byteMyCache", label: "YouTube" },
+  { href: "https://www.linkedin.com/in/sethbrasile-43a315a0", label: "LinkedIn" },
+  { href: "https://bytemycache.com", label: "Blog" },
+];
+---
+
+<footer class="border-t border-border/40 py-8 mt-12">
+  <div
+    class="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground"
+  >
+    <p>© {year} Seth Brasile. All rights reserved.</p>
+    <div class="flex items-center gap-6">
+      {
+        socials.map((s) => (
+          <a
+            href={s.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-foreground transition-colors"
+          >
+            {s.label}
+          </a>
+        ))
+      }
+      <a href="/privacy" class="hover:text-foreground transition-colors">Privacy</a>
+    </div>
+  </div>
+</footer>

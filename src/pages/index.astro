@@ -1,0 +1,189 @@
+---
+import { Icon } from "astro-icon/components";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "Seth Brasile — Engineer, Builder, IT/Security | Durant, OK";
+const description =
+  "Engineer, DevOps, and IT/Security operator. Building software, securing infrastructure, and co-owning businesses. 12+ years experience.";
+
+const stats = [
+  { value: "12+", label: "Years Exp" },
+  { value: "75+", label: "Direct Reports" },
+  { value: "3.2k", label: "Endpoints Managed" },
+  { value: "4", label: "Regulated Ind." },
+];
+
+const featured = [
+  {
+    title: "potluck-planner.com",
+    url: "https://potluck-planner.com",
+    description:
+      "Solo event-coordination SaaS; passkeys/WebAuthn, OAuth, magic links, payments, email/SMS, 10 background job handlers. Production-ready.",
+    stack: ["Next.js 15", "Better Auth", "Neon+Drizzle", "Stripe", "Inngest"],
+  },
+  {
+    title: "margin-check.com",
+    url: "https://margin-check.com",
+    description:
+      "Solo SaaS; ingests Etsy CSV exports, surfaces real per-listing profit margins after all fees. Pre-launch.",
+    stack: ["Next.js 16", "CF Workers", "Neon+Drizzle", "Stripe"],
+  },
+  {
+    title: "ppmc-claude-routines-and-schedules",
+    description:
+      "Policy-as-code AI governance for an agency — declarative routines, version-controlled CLAUDE.md set, drift detection, dev-mode guards, pre-push secret scanning.",
+    stack: ["Bash", "YAML", "Claude Code", "Git"],
+  },
+  {
+    title: "Immutable Reverse-Proxy Edge",
+    description:
+      "Fedora CoreOS immutable reverse proxy at the network edge, terminating SSL on the LAN side for IDS/IPS inspection. Deployed in production.",
+    stack: ["Fedora CoreOS", "NGINX", "fail2ban", "Cloudflare"],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} path="/">
+  <article class="max-w-3xl">
+    <section class="mb-20 pt-8 animate-fade-up">
+      <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
+        Seth builds <span class="text-muted-foreground">&amp;</span> operates.
+      </h1>
+      <p class="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-10 max-w-2xl">
+        I'm a software engineer who also spent the better part of a decade running enterprise
+        IT and security. So I write the code, own the infrastructure it runs on, and answer
+        the on-call line when it breaks at 2am — usually for systems I built myself. Most
+        teams split that across three people. The fact that it's one person is the whole point.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a
+          href="https://pricklypearmarketing.co"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center bg-foreground text-background px-6 py-4 rounded-md font-medium transition-transform hover:-translate-y-1"
+        >
+          Marketing or SEO? → Prickly Pear Marketing Co
+        </a>
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center border border-border bg-card px-6 py-4 rounded-md font-medium transition-transform hover:-translate-y-1"
+        >
+          Need something built or automated? → Work with Seth directly
+        </a>
+      </div>
+    </section>
+
+    <section
+      class="mb-20 grid grid-cols-2 md:grid-cols-4 gap-8 border-y border-border py-10 animate-fade-up"
+      style="animation-delay: 0.1s"
+    >
+      {
+        stats.map((s) => (
+          <div>
+            <div class="font-mono text-3xl font-bold mb-1">{s.value}</div>
+            <div class="text-sm text-muted-foreground font-medium uppercase tracking-wider">
+              {s.label}
+            </div>
+          </div>
+        ))
+      }
+    </section>
+
+    <section class="mb-20 animate-fade-up" style="animation-delay: 0.2s">
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="text-2xl font-bold font-display">Featured Projects</h2>
+        <a
+          href="/work"
+          class="text-sm font-medium flex items-center gap-1 hover:text-primary transition-colors"
+        >
+          View all <Icon name="lucide:arrow-right" class="size-4" aria-hidden="true" />
+        </a>
+      </div>
+
+      <div class="grid gap-6">
+        {
+          featured.map((p) => (
+            <div class="group border border-border bg-card rounded-lg p-6 transition-all hover:border-foreground/50">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="text-xl font-bold">{p.title}</h3>
+                {p.url && (
+                  <a
+                    href={p.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-muted-foreground hover:text-foreground"
+                    aria-label={`Visit ${p.title}`}
+                  >
+                    <Icon name="lucide:arrow-up-right" class="size-5" aria-hidden="true" />
+                  </a>
+                )}
+              </div>
+              <p class="text-muted-foreground mb-6 leading-relaxed">{p.description}</p>
+              <div class="flex flex-wrap gap-2 font-mono text-xs">
+                {p.stack.map((tech) => (
+                  <span class="bg-secondary px-2 py-1 rounded">{tech}</span>
+                ))}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <section
+      class="mb-20 bg-secondary/50 p-8 rounded-lg border border-border animate-fade-up"
+      style="animation-delay: 0.3s"
+    >
+      <h2 class="text-xl font-bold mb-4 font-display">About Seth</h2>
+      <div class="prose prose-neutral dark:prose-invert max-w-none text-muted-foreground space-y-4">
+        <p>
+          I've been building software since 2013, and running enterprise IT and security for
+          most of the years around it — twelve-plus years across casinos, healthcare,
+          manufacturing, and government. The kind of regulated places where "it works on my
+          machine" gets you a compliance finding.
+        </p>
+        <p>
+          The short version: I built BetterLife's entire platform from zero — frontend,
+          backend, ML, databases, CI/CD — and hired and led the team of six that ran it. It
+          turned profitable in its first year. Before that I spent two years as a PCI-DSS
+          subject-matter expert, led the PrintNightmare response across a regulated client
+          base, and built security and compliance automation across roughly three thousand
+          endpoints. Today I ship production SaaS solo on a modern edge stack, and I co-own
+          a marketing agency.
+        </p>
+        <p>
+          What ties it together: I codify, version, review, and secure the things most shops
+          still do by hand. I'll tell you straight when something was a proof-of-concept and
+          when it was production. I treat my own homelab like production — incident reports
+          and all. And I write the kind of code I'd want to inherit.
+        </p>
+        <p>
+          If you found your way here, you probably already know some of this. So tell me what
+          you're trying to build, or fix.
+        </p>
+      </div>
+    </section>
+
+    <section class="border-t border-border pt-10 animate-fade-up" style="animation-delay: 0.4s">
+      <div class="flex items-center gap-2 mb-4">
+        <Icon name="lucide:cpu" class="size-5 text-muted-foreground" aria-hidden="true" />
+        <h2 class="text-lg font-bold font-display">Beyond the Keyboard</h2>
+      </div>
+      <div class="text-muted-foreground space-y-3">
+        <p>
+          When I'm not shipping code: I run a homelab I treat like production — yes, I write
+          incident reports for outages that only affect me. I cook on camera over at{" "}
+          <a
+            href="https://bytemycache.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-foreground hover:underline">byteMyCache</a
+          >. I build things out of wood, play guitar, and occasionally build the guitar. And I
+          co-own a real-estate partnership, because apparently three businesses wasn't enough.
+        </p>
+        <p>Same instinct every time: take it apart, understand it, make it work better.</p>
+      </div>
+    </section>
+  </article>
+</BaseLayout>

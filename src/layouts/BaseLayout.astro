@@ -1,0 +1,117 @@
+---
+import "@fontsource-variable/inter";
+import "@fontsource-variable/syne";
+import "@fontsource/space-mono/400.css";
+import "@fontsource/space-mono/700.css";
+import "@fontsource/space-mono/400-italic.css";
+import "@fontsource/space-mono/700-italic.css";
+import "../styles/global.css";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+
+export interface Props {
+  title: string;
+  description: string;
+  /** Path only, e.g. "/work". Canonical + OG url are built from `site`. */
+  path?: string;
+  ogType?: string;
+  ogImage?: string;
+}
+
+const {
+  title,
+  description,
+  path = Astro.url.pathname,
+  ogType = "website",
+  ogImage = "/opengraph.jpg",
+} = Astro.props;
+
+const canonical = new URL(path, Astro.site).href;
+const ogImageUrl = new URL(ogImage, Astro.site).href;
+
+// Site-level Person entity. Pages may add page-specific JSON-LD (e.g. ProfilePage on /cv).
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://sethbrasile.com/#person",
+  name: "Seth Brasile",
+  jobTitle: "Engineer · IT/Security · Builder",
+  address: { "@type": "PostalAddress", addressLocality: "Durant", addressRegion: "OK" },
+  email: "seth@tenorcreative.com",
+  url: "https://sethbrasile.com",
+  sameAs: [
+    "https://github.com/sethbrasile",
+    "https://youtube.com/@byteMyCache",
+    "https://www.linkedin.com/in/sethbrasile-43a315a0",
+    "https://bytemycache.com",
+    "https://pricklypearmarketing.co",
+  ],
+  knowsAbout: [
+    "TypeScript", "JavaScript", "Go", "Python", "PowerShell", "Full-Stack Development",
+    "DevOps", "PCI-DSS", "Cybersecurity", "Automation", "SaaS", "Web Audio API",
+    "Cloudflare Workers", "Drizzle ORM", "Enterprise IT",
+  ],
+  worksFor: { "@type": "Organization", name: "Prickly Pear Marketing Co", url: "https://pricklypearmarketing.co" },
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Allow pinch-to-zoom (no maximum-scale) for accessibility -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImageUrl} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- No-FOUC theme: set .dark before first paint from localStorage/system pref. -->
+    <script is:inline>
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          var dark = stored ? stored === "dark"
+            : window.matchMedia("(prefers-color-scheme: dark)").matches;
+          if (dark) document.documentElement.classList.add("dark");
+        } catch (e) {}
+      })();
+    </script>
+
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+
+    <!-- Cloudflare Web Analytics beacon injected at deploy (Phase 8) — token-gated. -->
+    <slot name="head" />
+  </head>
+  <body class="min-h-[100dvh] flex flex-col font-sans selection:bg-primary selection:text-primary-foreground">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-foreground focus:px-4 focus:py-2 focus:text-background"
+    >
+      Skip to content
+    </a>
+    <Navigation />
+    <main id="main-content" class="flex-1 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,48 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const updated = "June 2, 2026";
+---
+
+<BaseLayout
+  title="Privacy — Seth Brasile"
+  description="How sethbrasile.com handles the limited data it collects."
+  path="/privacy"
+>
+  <article class="max-w-2xl mx-auto prose prose-neutral dark:prose-invert">
+    <h1 class="font-display">Privacy</h1>
+    <p class="text-muted-foreground">Last updated: {updated}</p>
+
+    <p>
+      This is a personal portfolio site. It does not run advertising, sell data, or set tracking
+      cookies. The only personal data it handles is what you choose to send through the contact
+      form.
+    </p>
+
+    <h2>Contact form</h2>
+    <p>
+      When you submit the contact form, the name, email address, subject, and message you enter are
+      sent to me by email (via the transactional email provider <strong>Resend</strong>) so I can
+      read and reply. That information is used only to respond to your message. It is not added to
+      any marketing list and is not shared with third parties beyond the email provider that
+      delivers it.
+    </p>
+    <p>
+      The form is protected by <strong>Cloudflare Turnstile</strong>, an anti-bot check that does
+      not use tracking cookies.
+    </p>
+
+    <h2>Analytics</h2>
+    <p>
+      Aggregate, privacy-friendly traffic stats are collected with <strong>Cloudflare Web
+      Analytics</strong>, which is cookieless and does not fingerprint or track individuals across
+      sites.
+    </p>
+
+    <h2>Your choices</h2>
+    <p>
+      If you've contacted me and want the email and its contents deleted, email
+      <a href="mailto:seth@tenorcreative.com">seth@tenorcreative.com</a> and I'll remove it.
+    </p>
+  </article>
+</BaseLayout>

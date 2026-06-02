@@ -2,13 +2,11 @@
 
 Personal portfolio site for Seth Brasile (designer / developer).
 
-> **STATUS: pre-transform.** The repo currently holds only the designer's source
-> (`designer-src/`) plus the prep config below. The site itself does not exist
-> yet — it gets built by running the **`brochure-site-transform`** skill, which
-> converts `designer-src/` into a production Astro static site on Cloudflare
-> Pages. Sections tagged **(post-transform)** are placeholders the skill fills in
-> as it runs. When the transform completes, this STATUS banner should be removed
-> and the (post-transform) sections populated with the real stack/commands/map.
+> **STATUS: transform in progress — built locally, not yet deployed.** The Astro
+> site has been scaffolded from `designer-src/` (Phases 3–4 done; full build green).
+> Remaining: Phase 5 copy-claim confirmation, Phase 6 tests, Phase 6.5 recreation
+> review, Phase 7 audits, and Phase 2/8 deploy (GitHub repo + Cloudflare Pages).
+> Progress tracked in `.transform-state.json`.
 
 ---
 
@@ -108,31 +106,57 @@ not needed**. See `.gitignore`.
 
 ---
 
-## Stack (post-transform)
+## Stack
 
-_Filled in by the skill. Expected: Astro, `@astrojs/react`, `@astrojs/tailwind`,
-`@astrojs/sitemap`, Cloudflare Pages + Functions._
+- **Astro 5** static output, **zero JS framework** — no React island runtime.
+  Dropped `@astrojs/react` deliberately; all interactivity is vanilla JS in
+  `<script>` tags (theme toggle, mobile menu, Work/CV lens filters, contact form).
+- **Tailwind v4** via `@tailwindcss/vite` (not `@astrojs/tailwind`) — matches the
+  designer's stack. Theme in `src/styles/global.css` (`@theme` + HSL CSS vars).
+- **Fonts:** `@fontsource` self-hosted — Syne (display), Inter (sans), Space Mono (mono).
+- **Icons:** `astro-icon` + `@iconify-json/lucide` (zero-JS inline SVG).
+- **Sitemap:** `@astrojs/sitemap` (needs `site` in `astro.config.mjs` — set).
+- **Hosting:** Cloudflare Pages (static) + Pages Functions (`/functions/api/contact.ts`).
 
-## Commands (post-transform)
+## Commands
 
-_Filled in by the skill (e.g. `npm run dev`, `npm run build`, `npm run preview`,
-Playwright test command)._
+- `npm run dev` — Astro dev server (localhost:4321)
+- `npm run build` — `astro check` (typecheck) + `astro build` → `dist/`
+- `npm run preview` — serve the production build locally
+- Tests (Phase 6): Playwright against the preview build (not dev — toolbar artifacts)
 
-## Repo map (post-transform)
+## Repo map
 
-_Filled in by the skill — `src/pages`, `src/layouts/BaseLayout.astro`,
-`src/components`, `functions/api/contact.ts`, `public/_headers`, etc._
+- `src/pages/` — `index`, `work`, `cv`, `contact`, `privacy`, `404` (`.astro`)
+- `src/layouts/BaseLayout.astro` — head/meta/OG, Person JSON-LD (`@id`, no geo),
+  skip-nav, no-FOUC theme script, font imports; `<slot name="head">` for per-page schema
+- `src/components/` — `Navigation.astro` (active link + mobile menu + theme toggle),
+  `Footer.astro` (socials + privacy link)
+- `src/styles/global.css` — Tailwind v4 entry + theme + `.animate-fade-up` keyframes
+- `functions/api/contact.ts` — contact Pages Function (own `functions/tsconfig.json`,
+  excluded from root `astro check`)
+- `public/` — `favicon.svg`, `opengraph.jpg`, `robots.txt`, `_headers` (CSP + cache)
+- `designer-src/artifacts/sethbrasile/` — original React source (kept for recreation review)
 
-## Forms (post-transform)
+## Forms
 
-_Contact form → Cloudflare Pages Function with Turnstile + server-side Zod +
-Resend delivery (n8n fallback). Document env vars in `.env.example`._
+Contact form → `POST /api/contact` (CF Pages Function), **Variant A**: Turnstile
+verify (fail-secure) → Zod → **Resend** to seth@tenorcreative.com (primary) →
+**n8n** HMAC-signed fallback via `waitUntil` (optimistic success). Env documented in
+`.env.example`; secrets live in the Pages dashboard. Turnstile site key defaults to
+CF's always-pass TEST key until `PUBLIC_TURNSTILE_SITE_KEY` is set in prod.
 
 ---
 
 ## Tech debt
 
-_(none yet — log skipped scale-ups here)_
+- `@fontsource` emits 22 woff2 subsets (all languages). Unicode-range gated → no
+  load penalty, but could trim to latin-only to declutter `dist/`.
+- 6 moderate npm advisories (transitive dev tooling) — audit/resolve in Phase 7.
+- Résumé PDF (`public/Seth_Brasile_Resume.pdf`) not yet provided — CV download
+  button 404s until Seth drops the file.
+- n8n fallback for the contact form is coded but unconfigured (`N8N_WEBHOOK_URL`
+  unset) — Resend-only until set up at deploy.
 
 ## Open questions
 

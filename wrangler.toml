@@ -1,0 +1,8 @@
+name = "sethbrasile-com"
+compatibility_date = "2026-06-02"
+pages_build_output_dir = "dist"
+
+# Non-secret runtime vars for Pages Functions. Secrets (TURNSTILE_SECRET_KEY,
+# RESEND_API_KEY, N8N_WEBHOOK_SECRET) are set in the Pages dashboard, never here.
+[vars]
+# N8N_WEBHOOK_URL = "https://n8n.example.com/webhook/sethbrasile-contact"

@@ -1,0 +1,214 @@
+---
+import { Icon } from "astro-icon/components";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "Contact Seth Brasile";
+const description =
+  "Get in touch with Seth Brasile for software engineering, automation, or IT/Security consulting.";
+
+// Public Turnstile site key. Defaults to Cloudflare's always-pass TEST key for
+// local/dev; production sets PUBLIC_TURNSTILE_SITE_KEY in the Pages env.
+const turnstileSiteKey =
+  import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? "1x00000000000000000000AA";
+---
+
+<BaseLayout title={title} description={description} path="/contact">
+  <div class="max-w-2xl mx-auto">
+    <header class="mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold font-display mb-6 tracking-tight">Contact</h1>
+      <p class="text-xl text-muted-foreground leading-relaxed">Let's build something.</p>
+    </header>
+
+    <div class="grid gap-12">
+      <div class="bg-secondary/50 p-8 rounded-xl border border-border">
+        <h2 class="text-2xl font-bold font-display mb-2">Marketing or SEO?</h2>
+        <p class="text-muted-foreground mb-6">
+          If you're looking for web design, technical SEO, or marketing automation for your
+          business, reach out to my agency.
+        </p>
+        <a
+          href="https://pricklypearmarketing.co"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 bg-foreground text-background px-6 py-3 rounded-md font-medium transition-transform hover:-translate-y-0.5"
+        >
+          Visit Prickly Pear Marketing Co <Icon name="lucide:arrow-right" class="size-[18px]" aria-hidden="true" />
+        </a>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-bold font-display mb-6">Need something built or automated?</h2>
+        <p class="text-muted-foreground mb-8">
+          For direct software engineering, custom automation, or IT/Security consulting, use the
+          form below to email me directly.
+        </p>
+
+        <form
+          id="contact-form"
+          class="space-y-6 bg-card border border-border p-6 md:p-8 rounded-xl"
+          novalidate
+        >
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label for="name" class="block text-sm font-medium mb-2">Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                required
+                minlength="2"
+                placeholder="Jane Doe"
+                autocomplete="name"
+                aria-describedby="name-error"
+                class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring aria-[invalid=true]:border-destructive"
+              />
+              <p id="name-error" class="field-error mt-1 text-sm text-destructive hidden"></p>
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium mb-2">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                placeholder="jane@example.com"
+                autocomplete="email"
+                aria-describedby="email-error"
+                class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring aria-[invalid=true]:border-destructive"
+              />
+              <p id="email-error" class="field-error mt-1 text-sm text-destructive hidden"></p>
+            </div>
+          </div>
+
+          <div>
+            <label for="subject" class="block text-sm font-medium mb-2">Subject</label>
+            <input
+              id="subject"
+              name="subject"
+              type="text"
+              required
+              minlength="2"
+              placeholder="What do you need built?"
+              aria-describedby="subject-error"
+              class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring aria-[invalid=true]:border-destructive"
+            />
+            <p id="subject-error" class="field-error mt-1 text-sm text-destructive hidden"></p>
+          </div>
+
+          <div>
+            <label for="message" class="block text-sm font-medium mb-2">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              minlength="10"
+              maxlength="2000"
+              placeholder="Details about your project, scale, and timeline..."
+              aria-describedby="message-error"
+              class="w-full min-h-[150px] rounded-md border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring aria-[invalid=true]:border-destructive"
+            ></textarea>
+            <p id="message-error" class="field-error mt-1 text-sm text-destructive hidden"></p>
+          </div>
+
+          <div class="cf-turnstile" data-sitekey={turnstileSiteKey}></div>
+
+          <button
+            id="submit-btn"
+            type="submit"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-foreground text-background px-8 py-3 rounded-md font-medium transition-transform hover:-translate-y-0.5 disabled:opacity-60 disabled:hover:translate-y-0 disabled:cursor-not-allowed"
+          >
+            <Icon name="lucide:send" class="size-[18px]" aria-hidden="true" /> Send Email
+          </button>
+
+          <p id="form-status" role="status" aria-live="polite" class="text-sm"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <Fragment slot="head">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer is:inline></script>
+  </Fragment>
+</BaseLayout>
+
+<script>
+  import { z } from "zod";
+
+  const schema = z.object({
+    name: z.string().min(2, "Name is required"),
+    email: z.string().email("Valid email is required"),
+    subject: z.string().min(2, "Subject is required"),
+    message: z.string().min(10, "Message must be at least 10 characters").max(2000, "Message is too long"),
+  });
+
+  const form = document.getElementById("contact-form") as HTMLFormElement | null;
+  const status = document.getElementById("form-status");
+  const submitBtn = document.getElementById("submit-btn") as HTMLButtonElement | null;
+
+  function clearErrors() {
+    form?.querySelectorAll<HTMLElement>(".field-error").forEach((el) => {
+      el.textContent = "";
+      el.classList.add("hidden");
+    });
+    form?.querySelectorAll("input, textarea").forEach((el) => el.removeAttribute("aria-invalid"));
+  }
+
+  function showError(field: string, message: string) {
+    const input = form?.querySelector(`[name="${field}"]`);
+    const err = document.getElementById(`${field}-error`);
+    input?.setAttribute("aria-invalid", "true");
+    if (err) {
+      err.textContent = message;
+      err.classList.remove("hidden");
+    }
+  }
+
+  function setStatus(message: string, ok: boolean) {
+    if (!status) return;
+    status.textContent = message;
+    status.className = `text-sm ${ok ? "text-foreground" : "text-destructive"}`;
+  }
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    clearErrors();
+    setStatus("", true);
+
+    const data = Object.fromEntries(new FormData(form));
+    const parsed = schema.safeParse(data);
+    if (!parsed.success) {
+      for (const issue of parsed.error.issues) showError(String(issue.path[0]), issue.message);
+      return;
+    }
+
+    const token = (form.querySelector('[name="cf-turnstile-response"]') as HTMLInputElement | null)?.value;
+    if (!token) {
+      setStatus("Please complete the anti-bot check and try again.", false);
+      return;
+    }
+
+    submitBtn && (submitBtn.disabled = true);
+    setStatus("Sending…", true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...parsed.data, "cf-turnstile-response": token }),
+      });
+      if (res.ok) {
+        form.reset();
+        // @ts-ignore — Turnstile global
+        window.turnstile?.reset?.();
+        setStatus("Thanks — your message is on its way. I'll reply to the email you gave.", true);
+      } else {
+        const body = await res.json().catch(() => ({}));
+        setStatus(body.error || "Something went wrong. Email seth@tenorcreative.com directly.", false);
+      }
+    } catch {
+      setStatus("Network error. Email seth@tenorcreative.com directly.", false);
+    } finally {
+      submitBtn && (submitBtn.disabled = false);
+    }
+  });
+</script>
