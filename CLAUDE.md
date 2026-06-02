@@ -178,7 +178,13 @@ to satisfy WCAG AA. The designer-recreation-review should treat them as intentio
 
 ## Open questions
 
-_(Phase 6.5 logs accidental-vs-intentional visual deltas here)_
+- **Phase 6.5 recreation review (2026-06-02): ZERO accidental drift.** Compared all 4
+  pages × 2 viewports (1440/390) against `designer-src/artifacts/sethbrasile` booted on
+  :5173. Every delta was intentional + documented (theme toggle, Turnstile, Privacy
+  link/page, the 3 WCAG fixes above). No client assets needed — designer is text-forward
+  (no stock photos/avatars/heroes to source). No open questions raised.
+- To re-run the visual diff: `node scripts/shot.mjs` (boot designer per the notes in
+  `.transform-state.json`'s `recreationReview` block first).
 
 ## Dismissed
 
