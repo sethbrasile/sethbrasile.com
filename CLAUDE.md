@@ -157,8 +157,8 @@ CF's always-pass TEST key until `PUBLIC_TURNSTILE_SITE_KEY` is set in prod.
 - `@fontsource` emits 22 woff2 subsets (all languages). Unicode-range gated → no
   load penalty, but could trim to latin-only to declutter `dist/`.
 - 6 moderate npm advisories (transitive dev tooling) — audit/resolve in Phase 7.
-- Résumé PDF (`public/Seth_Brasile_Resume.pdf`) not yet provided — CV download
-  button 404s until Seth drops the file.
+- ~~Résumé PDF not yet provided~~ — **resolved 2026-06-02**: `public/Seth_Brasile_Resume.pdf`
+  added (source: `~/Documents/GitHub/resume/output/Seth-Brasile-Resume.pdf`). CV download works.
 - n8n fallback for the contact form is coded but unconfigured (`N8N_WEBHOOK_URL`
   unset) — Resend-only until set up at deploy.
 
