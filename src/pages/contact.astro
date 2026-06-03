@@ -6,10 +6,12 @@ const title = "Contact Seth Brasile";
 const description =
   "Get in touch with Seth Brasile for software engineering, automation, or IT/Security consulting.";
 
-// Public Turnstile site key. Defaults to Cloudflare's always-pass TEST key for
-// local/dev; production sets PUBLIC_TURNSTILE_SITE_KEY in the Pages env.
+// Public Turnstile site key (safe to commit — it's public). Real production widget
+// for sethbrasile.com; the CF Pages dashboard blocks plaintext build vars, so the
+// site key is baked in as the default. PUBLIC_TURNSTILE_SITE_KEY still overrides it
+// if set (e.g. CF's always-pass TEST key "1x00000000000000000000AA" for local dev).
 const turnstileSiteKey =
-  import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? "1x00000000000000000000AA";
+  import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? "0x4AAAAAADeMndfdVkhnA1oN";
 ---
 
 <BaseLayout title={title} description={description} path="/contact">
