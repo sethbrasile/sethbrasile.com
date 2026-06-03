@@ -89,7 +89,7 @@ test("happy path: POSTs payload and shows success", async ({ page }) => {
   await injectToken(page);
   await page.locator("#submit-btn").click();
 
-  await expect(page.locator("#form-status")).toContainText(/on its way/i);
+  await expect(page.locator("#form-status")).toContainText(/reply as soon as I can/i);
   await expect(page.locator("#name")).toHaveValue(""); // form.reset()
   expect(payload).toMatchObject({
     name: "Jane Doe",

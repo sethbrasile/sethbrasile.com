@@ -202,7 +202,7 @@ const turnstileSiteKey =
         form.reset();
         // @ts-ignore — Turnstile global
         window.turnstile?.reset?.();
-        setStatus("Thanks — your message is on its way. I'll reply to the email you gave.", true);
+        setStatus("Thank you! I will reply as soon as I can.", true);
       } else {
         const body = await res.json().catch(() => ({}));
         setStatus(body.error || "Something went wrong. Email seth.brasile@gmail.com directly.", false);
