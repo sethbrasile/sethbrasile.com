@@ -187,6 +187,11 @@ to satisfy WCAG AA. The designer-recreation-review should treat them as intentio
 - **Published email swapped to seth.brasile@gmail.com (2026-06-02, Seth-directed)** across
   Person JSON-LD, CV mailto, privacy page, contact-form recipient. Designer-src has
   seth@tenorcreative.com — intentional, not drift.
+- **Business-outcome angle woven into Home copy (2026-06-04, Seth-directed).** Added the
+  "help businesses scale by building systems and automating processes" framing to the hero
+  subhead, the "About Seth" thesis line, and the meta description — to de-emphasize the
+  IT-heavy slant. Existing copy kept; only the outcome clause inserted. Designer-src has
+  the older IT-forward wording — intentional, not drift.
 
 ## Open questions
 
