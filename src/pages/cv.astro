@@ -4,7 +4,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 const title = "CV & Résumé — Seth Brasile | Full-Stack Engineer · IT/Security · Leader";
 const description =
-  "Professional history, skills, and experience. 12+ years across software engineering, DevOps, enterprise IT, and leadership.";
+  "Professional history, skills, and experience. 12+ years across software engineering, DevOps, enterprise IT, production AI/ML, and leadership.";
 
 type Tag = "dev" | "it" | "leader";
 
@@ -29,6 +29,7 @@ const history: Role[] = [
     highlights: [
       { text: "Co-owned full-service marketing agency; owns the technical side (web, SEO, automation, internal tooling), shares agency leadership.", tags: ["leader", "dev"] },
       { text: "Built the internal AI-tool governance + scheduled-agent system the partner team runs on.", tags: ["dev", "it"] },
+      { text: "Designed the governance layer for AI-produced client work — signed contracts, tamper-evident audit records, automated validation gates, independent review. Four adversarial evaluations planted failures; every one was caught.", tags: ["dev", "it"] },
       { text: "Built and operates the web + SEO delivery pipeline used across client engagements.", tags: ["dev"] },
       { text: "Co-owner equity, P&L, and decision authority.", tags: ["leader"] },
     ],
@@ -58,6 +59,7 @@ const history: Role[] = [
       { text: "Designed and owned the entire v1 platform — frontend, backend, ML, databases, CI/CD.", tags: ["dev", "it"] },
       { text: "Hired and led a team of 6 (2 frontend, 1 backend, 1 senior frontend + UI/UX, 1 ML). Interviews, hiring decisions, technical direction, code review.", tags: ["leader", "dev"] },
       { text: "Built an R-based ML matchmaking system pairing users with pods.", tags: ["dev"] },
+      { text: "Owned production operations — CI/CD, deployments, observability — and built the InfluxDB + Grafana telemetry and reporting stack the team watched platform and business metrics on.", tags: ["dev", "it"] },
       { text: "Built the entire auth stack on Auth0 (Okta) — production SSO, MFA, full lifecycle.", tags: ["dev", "it"] },
       { text: "Led the v2 migration to cloud-native SaaS.", tags: ["it", "dev"] },
       { text: "Stack: Nuxt, Vercel, FaunaDB, Stripe, PostgreSQL (Neon), InfluxDB 2.0, Heroku, Go, Grafana, Python, R, reticulate, Hetzner, Dokku/Docker.", tags: ["dev", "it"] },
@@ -161,10 +163,11 @@ const skills: { group: string; items: { name: string; tags: Tag[] }[] }[] = [
   { group: "Languages", items: [{ name: "TypeScript", tags: ["dev"] }, { name: "JavaScript", tags: ["dev"] }, { name: "PowerShell", tags: ["it"] }, { name: "Go", tags: ["dev", "it"] }, { name: "Python", tags: ["dev", "it"] }, { name: "PHP", tags: ["dev"] }, { name: "R", tags: ["dev"] }, { name: "SQL", tags: ["dev", "it"] }] },
   { group: "Frontend / Web", items: [{ name: "Nuxt 3", tags: ["dev"] }, { name: "Vue 3", tags: ["dev"] }, { name: "Ember.js", tags: ["dev"] }, { name: "React", tags: ["dev"] }, { name: "Tailwind CSS", tags: ["dev"] }, { name: "Web Audio API", tags: ["dev"] }] },
   { group: "Backend / Platform", items: [{ name: "Node/Express", tags: ["dev"] }, { name: "gRPC / mutual TLS", tags: ["dev", "it"] }, { name: "REST / GraphQL", tags: ["dev"] }, { name: "Better Auth", tags: ["dev"] }, { name: "Stripe", tags: ["dev"] }] },
-  { group: "Cloud / DevOps / Infra", items: [{ name: "Docker/Compose/Dokku", tags: ["dev", "it"] }, { name: "CI/CD (GitHub Actions)", tags: ["dev", "it"] }, { name: "Cloudflare (Workers, Tunnels, DNS)", tags: ["dev", "it"] }, { name: "Microsoft Azure", tags: ["it"] }, { name: "NGINX / reverse-proxy hardening", tags: ["it"] }, { name: "Immutable infrastructure", tags: ["it"] }] },
+  { group: "Cloud / DevOps / Infra", items: [{ name: "Docker/Compose/Dokku", tags: ["dev", "it"] }, { name: "Kubernetes (self-hosted)", tags: ["dev", "it"] }, { name: "CI/CD (GitHub Actions)", tags: ["dev", "it"] }, { name: "Cloudflare (Workers, Tunnels, DNS)", tags: ["dev", "it"] }, { name: "Microsoft Azure", tags: ["it"] }, { name: "NGINX / reverse-proxy hardening", tags: ["it"] }, { name: "Immutable infrastructure", tags: ["it"] }] },
   { group: "Enterprise IT / Sysadmin", items: [{ name: "Active Directory", tags: ["it"] }, { name: "Group Policy (GPO)", tags: ["it"] }, { name: "SCCM / SCSM", tags: ["it"] }, { name: "Intune", tags: ["it"] }, { name: "ConnectWise Automate (RMM)", tags: ["it"] }, { name: "M365 / Google Workspace admin", tags: ["it"] }, { name: "Okta / Auth0", tags: ["it", "dev"] }] },
   { group: "Security / Compliance", items: [{ name: "PCI-DSS (2-yr SME)", tags: ["it"] }, { name: "Title 31 / IRS", tags: ["it"] }, { name: "HIPAA", tags: ["it"] }, { name: "NIST / CMMC-adjacent", tags: ["it"] }, { name: "PrintNightmare response", tags: ["it"] }, { name: "Zero-trust ingress", tags: ["it"] }, { name: "IDS/IPS + split-brain DNS", tags: ["it"] }] },
   { group: "Data / ML", items: [{ name: "R + Python (production ML)", tags: ["dev"] }, { name: "reticulate", tags: ["dev"] }, { name: "Grafana", tags: ["dev", "it"] }, { name: "InfluxDB", tags: ["dev", "it"] }] },
+  { group: "AI Systems / MLOps", items: [{ name: "Model lifecycle (PyTorch, eval gates, provenance, deployment)", tags: ["dev"] }, { name: "Self-hosted local LLMs (llama.cpp, vLLM)", tags: ["dev", "it"] }, { name: "RAG / embeddings / pgvector", tags: ["dev"] }, { name: "Agentic engineering (Claude Code, Codex)", tags: ["dev", "it", "leader"] }, { name: "AI governance (policy as code, audit records)", tags: ["it", "leader"] }] },
   { group: "Leadership", items: [{ name: "Hired + led 6 engineers", tags: ["leader"] }, { name: "Managed 75+ reports", tags: ["leader"] }, { name: "Code review / mentoring", tags: ["leader", "dev"] }, { name: "Vendor management", tags: ["leader"] }, { name: "P&L ownership", tags: ["leader"] }] },
 ];
 
