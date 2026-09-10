@@ -21,7 +21,7 @@ const projects: Project[] = [
     title: "Cathode",
     url: "https://cathodeaudio.com",
     description:
-      "Solo-founded guitar amp simulator built on real-time circuit simulation: it runs an amp's actual circuit live at every knob position, where the industry standard plays back frozen 'captures' locked to one setting. A cross-platform C++/JUCE audio engine with a React interface, a neural network power-stage model trained on simulator data (PyTorch, deployed for real-time inference with a verified training-to-runtime lifecycle), plus the full go-to-market web platform (marketing, email, planned licensing and commerce). Built with AI coding agents doing most of the implementation; I own the architecture, acceptance gates, and model lifecycle. Pre-launch, under the Prickly Pear Audio label.",
+      "A desktop application for designing and playing guitar-amplifier circuits, combining circuit simulation with a neural power-stage model in C++/JUCE. I directed development with Claude Code doing most implementation, guiding architecture, integration, and acceptance. We traced a failed model retrain to flawed training data and reached 0.48% holdout error against a 2% limit, then checked real-time audio performance. Pre-launch.",
     stack: ["C++", "JUCE", "Real-time DSP", "PyTorch", "React", "Nuxt 4", "Cloudflare Workers", "Neon + Drizzle"],
     tags: ["dev", "leader"],
   },
@@ -30,7 +30,7 @@ const projects: Project[] = [
     title: "margin-check.com",
     url: "https://margin-check.com",
     description:
-      "Solo SaaS; ingests Etsy CSV exports, surfaces real per-listing profit margins after all fees. Pre-launch.",
+      "Profit calculations for Etsy sellers, using their CSV exports to account for listing, transaction, processing, and advertising fees. I conceived the product and directed AI-assisted implementation, owning the architecture, review, and acceptance criteria. Development is complete; the product is pre-launch.",
     stack: ["Next.js 16", "Cloudflare Workers", "Neon + Drizzle", "Better Auth", "Stripe", "Inngest"],
     tags: ["dev"],
   },
@@ -39,16 +39,25 @@ const projects: Project[] = [
     title: "potluck-planner.com",
     url: "https://potluck-planner.com",
     description:
-      "Solo event-coordination SaaS; passkeys/WebAuthn, OAuth, magic links, payments, email/SMS, 10 background job handlers. Production-ready.",
-    stack: ["Next.js 15", "Better Auth", "Neon + Drizzle", "Cloudflare Workers", "Stripe", "Resend", "Twilio", "Inngest"],
+      "Event coordination for hosts and guests: invitations, RSVPs, dish signups, dietary restrictions, reminders, and shared-cost contributions. I conceived the service and directed AI agents through implementation, then reviewed, integrated, and validated the application. I own its architecture and live operation across authentication, payments, background jobs, and cloud infrastructure.",
+    stack: ["Next.js 16", "Better Auth", "Neon + Drizzle", "Cloudflare Workers", "Stripe", "Resend", "Twilio", "Inngest"],
     tags: ["dev"],
   },
   {
     id: "idea-machine",
     title: "idea-machine",
     description:
-      "Team RAG with a dual-database privacy boundary by design — shared topics in Postgres, private topics in local SQLite; data classification enforced at the storage layer.",
+      "Research memory that lets an AI agent turn articles, videos, PDFs, and documents into persistent insights with source tracking. I conceived the system and directed its development. PostgreSQL lexical search supports retrieval; the agent handles interpretation and curation, while Python exposes ingestion, persistence, and search tools.",
     stack: ["Python", "Postgres (Neon)", "SQLite", "trafilatura", "yt-dlp", "cryptography"],
+    tags: ["dev", "it"],
+  },
+  {
+    id: "list-at-ease",
+    title: "List At Ease — Fulcrum Insights contract",
+    url: "https://listatease.com/",
+    description:
+      "Senior full-stack, DevOps, and architecture contributor to a Laravel home-listing application, February–June 2025. I developed listing data, direct image uploads, and agreement/signature handling; configured Laravel Cloud; and automated deployments. I recommended schemas and packages, with decisions made by the team. We completed application development; public release is unconfirmed.",
+    stack: ["Laravel", "PHP", "Vue 3", "TypeScript", "Inertia", "Laravel Cloud", "Cloudflare R2"],
     tags: ["dev", "it"],
   },
   {

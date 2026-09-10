@@ -10,7 +10,7 @@ const stats = [
   { value: "12+", label: "Years Exp" },
   { value: "75+", label: "Direct Reports" },
   { value: "3.2k", label: "Endpoints Managed" },
-  { value: "4", label: "Regulated Ind." },
+  { value: "28", label: "Properties Supported" },
 ];
 
 const featured = [
@@ -18,33 +18,33 @@ const featured = [
     title: "Cathode",
     url: "https://cathodeaudio.com",
     description:
-      "Solo-founded guitar amp sim built on real-time circuit simulation — runs an amp's actual circuit live at every knob position, where the industry standard plays back frozen 'captures.' Cross-platform C++/JUCE audio engine, a PyTorch neural power-stage model deployed for real-time inference, React UI, and the full go-to-market web platform. Built with AI coding agents; I own architecture and the model lifecycle. Pre-launch, under Prickly Pear Audio.",
+      "Guitar-amplifier simulation combining a circuit model with a neural power stage. I directed the work, with Claude Code doing most implementation, and guided integration and validation for model accuracy and real-time audio. Pre-launch.",
     stack: ["C++", "JUCE", "Real-time DSP", "PyTorch", "React", "Nuxt 4", "CF Workers"],
   },
   {
     title: "potluck-planner.com",
     url: "https://potluck-planner.com",
     description:
-      "Solo event-coordination SaaS; passkeys/WebAuthn, OAuth, magic links, payments, email/SMS, 10 background job handlers. Production-ready.",
-    stack: ["Next.js 15", "Better Auth", "Neon+Drizzle", "Stripe", "Inngest"],
+      "Live event-planning software for invitations, RSVPs, shared contributions, and payments. I conceived the product and direct its AI-assisted development, from architecture and review through integration and operation.",
+    stack: ["Next.js 16", "Better Auth", "Neon+Drizzle", "Stripe", "Inngest"],
   },
   {
     title: "margin-check.com",
     url: "https://margin-check.com",
     description:
-      "Solo SaaS; ingests Etsy CSV exports, surfaces real per-listing profit margins after all fees. Pre-launch.",
+      "Turns Etsy sales exports into per-listing profit calculations after fees. I conceived the product and directed AI-assisted development, with responsibility for architecture and acceptance. Pre-launch.",
     stack: ["Next.js 16", "CF Workers", "Neon+Drizzle", "Stripe"],
   },
   {
     title: "ppmc-claude-routines-and-schedules",
     description:
-      "Policy-as-code AI governance for an agency — declarative routines, version-controlled CLAUDE.md set, drift detection, dev-mode guards, pre-push secret scanning.",
+      "Shared operating rules and scheduled automation for the agency's AI tools. Versioned instructions, drift detection, and secret scanning keep team practices consistent across repositories.",
     stack: ["Bash", "YAML", "Claude Code", "Git"],
   },
   {
     title: "Immutable Reverse-Proxy Edge",
     description:
-      "Fedora CoreOS immutable reverse proxy at the network edge, terminating SSL on the LAN side for IDS/IPS inspection. Deployed in production.",
+      "A hardened network entry point using Fedora CoreOS, NGINX, fail2ban, and Cloudflare. Developed in my homelab and deployed at DKBinnovative, with the setup documented in a technical series.",
     stack: ["Fedora CoreOS", "NGINX", "fail2ban", "Cloudflare"],
   },
 ];
@@ -57,9 +57,9 @@ const featured = [
         Seth builds <span class="text-muted-foreground">&amp;</span> operates.
       </h1>
       <p class="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-10 max-w-2xl">
-        I'm a software engineer who also spent the better part of a decade running enterprise
-        IT and security. I help businesses scale by building systems and automating the work
-        they'd otherwise do by hand — writing the code and owning the infrastructure it runs on.
+        I build software and business systems, automate manual work, and operate the
+        infrastructure behind them. My background spans enterprise IT, hands-on engineering,
+        and leading the people who deliver the work.
       </p>
 
       <div class="flex flex-col sm:flex-row gap-4">
@@ -75,7 +75,7 @@ const featured = [
           href="/contact"
           class="inline-flex items-center justify-center border border-border bg-card px-6 py-4 rounded-md font-medium transition-transform hover:-translate-y-1"
         >
-          Need something built or automated? → Work with Seth directly
+          Have a role or project in mind? → Talk with Seth
         </a>
       </div>
     </section>
@@ -144,30 +144,27 @@ const featured = [
       <h2 class="text-xl font-bold mb-4 font-display">About Seth</h2>
       <div class="prose prose-neutral dark:prose-invert max-w-none text-muted-foreground space-y-4">
         <p>
-          I've been building software since 2013, and running enterprise IT and security for
-          most of the years around it — twelve-plus years across casinos, healthcare,
-          manufacturing, and government. The kind of regulated places where "it works on my
-          machine" gets you a compliance finding.
+          I've built software since 2013, with enterprise IT experience stretching back to
+          2012. At the Chickasaw Nation, I supported systems across 28 properties and later
+          became one of two primary specialists for retail and payments. I spent two years
+          preparing for PCI audits and building the device tracking that supported them.
         </p>
         <p>
-          The short version: I built BetterLife's entire platform from zero — frontend,
-          backend, ML, databases, CI/CD — and hired and led the team of six that ran it. It
-          turned profitable in its first year. Before that I spent two years as a PCI-DSS
-          subject-matter expert, led the PrintNightmare response across a regulated client
-          base, and built security and compliance automation across roughly three thousand
-          endpoints. Today I ship production SaaS solo on a modern edge stack, and I co-own
-          a marketing agency.
+          At BetterLife, I led development of the founding platform, recruited four hires,
+          and led a six-person team that included me. I also adapted a data scientist's
+          R/Python matching code for production. When the business changed, I led the move
+          to lower-cost commercial software. At DKBinnovative, my automation work covered
+          security and service operations across as many as 3,200 endpoints.
         </p>
         <p>
-          What ties it together: I help businesses scale by building systems and automating the
-          things most shops still do by hand — I codify, version, review, and secure them. I'll
-          tell you straight when something was a proof-of-concept and
-          when it was production. I treat my own homelab like production — incident reports
-          and all. And I write the kind of code I'd want to inherit.
+          Today I lead technical delivery at Prickly Pear Marketing Co and direct independent
+          software projects with AI coding agents doing much of the implementation. I own
+          architecture, review, integration, and acceptance. The work starts with the business
+          need, whether that calls for custom software, an integration, or a vendor product.
         </p>
         <p>
-          If you found your way here, you probably already know some of this. So tell me what
-          you're trying to build, or fix.
+          I'm open to full-time roles in engineering, business systems, and technology
+          operations, as well as project conversations. Tell me what needs to work better.
         </p>
       </div>
     </section>

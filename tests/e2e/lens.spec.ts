@@ -5,20 +5,20 @@ test.describe("Work page lens filter", () => {
     await page.goto("/work");
     const cards = page.locator(".project-card");
 
-    // "All" pressed by default → 8 cards.
-    await expect(cards).toHaveCount(8);
-    await expect(page.locator(".project-card:visible")).toHaveCount(8);
+    // "All" pressed by default → 10 cards.
+    await expect(cards).toHaveCount(10);
+    await expect(page.locator(".project-card:visible")).toHaveCount(10);
 
     await page.locator('.lens-btn[data-lens="it"]').click();
-    await expect(page.locator(".project-card:visible")).toHaveCount(4);
+    await expect(page.locator(".project-card:visible")).toHaveCount(5);
     await expect(page.locator('.lens-btn[data-lens="it"]')).toHaveAttribute("aria-pressed", "true");
     await expect(page.locator('.lens-btn[data-lens="all"]')).toHaveAttribute("aria-pressed", "false");
 
     await page.locator('.lens-btn[data-lens="leader"]').click();
-    await expect(page.locator(".project-card:visible")).toHaveCount(1);
+    await expect(page.locator(".project-card:visible")).toHaveCount(2);
 
     await page.locator('.lens-btn[data-lens="all"]').click();
-    await expect(page.locator(".project-card:visible")).toHaveCount(8);
+    await expect(page.locator(".project-card:visible")).toHaveCount(10);
   });
 });
 

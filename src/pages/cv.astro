@@ -35,6 +35,20 @@ const history: Role[] = [
     ],
   },
   {
+    id: "fulcrum",
+    company: "Fulcrum Insights",
+    title: "Contract Senior Full Stack Developer · DevOps & Architecture",
+    location: "List At Ease project",
+    period: "Feb–Jun 2025",
+    tags: ["dev", "it"],
+    highlights: [
+      { text: "Senior contributor on a Laravel/Vue application; the team completed development.", tags: ["dev"] },
+      { text: "Developed listing data, direct image uploads to Cloudflare R2, and agreement/signature handling.", tags: ["dev"] },
+      { text: "Configured Laravel Cloud and automated deployments through GitHub Actions.", tags: ["dev", "it"] },
+      { text: "Recommended schemas and Laravel packages, with architecture decisions made collectively by the team.", tags: ["dev"] },
+    ],
+  },
+  {
     id: "tenor",
     company: "Tenor Creative LLC",
     title: "Founder · Solutions Engineer · Primary Developer",
@@ -50,18 +64,19 @@ const history: Role[] = [
   {
     id: "betterlife",
     company: "BetterLife",
-    title: "Senior Full-Stack Engineer · DevOps · Software Systems Architect",
+    title: "Lead Software Engineer & Architect",
     location: "Kihei, HI (remote)",
-    period: "Mar 2023–Present",
+    period: "Mar 2023–Present · Advisory since mid-2024",
     tags: ["dev", "it", "leader"],
     highlights: [
-      { text: "Founding engineer/architect for a small-groups (\"pods\") matchmaking platform.", tags: ["dev"] },
+      { text: "Led development of the financial wellness startup's founding platform for members and small-group matching.", tags: ["dev"] },
       { text: "Designed and owned the entire v1 platform — frontend, backend, ML, databases, CI/CD.", tags: ["dev", "it"] },
-      { text: "Hired and led a team of 6 (2 frontend, 1 backend, 1 senior frontend + UI/UX, 1 ML). Interviews, hiring decisions, technical direction, code review.", tags: ["leader", "dev"] },
-      { text: "Built an R-based ML matchmaking system pairing users with pods.", tags: ["dev"] },
+      { text: "Recruited four hires and led a six-person team including myself and a pre-existing data scientist. Owned team management; pay was handled elsewhere.", tags: ["leader", "dev"] },
+      { text: "Turned stakeholder requirements into Kanban cards and assignments, made stack and architecture decisions, reviewed code, and managed merges.", tags: ["leader", "dev"] },
+      { text: "Adapted the data scientist's R/Python matching code for cloud deployment and took it into production.", tags: ["dev", "it"] },
       { text: "Owned production operations — CI/CD, deployments, observability — and built the InfluxDB + Grafana telemetry and reporting stack the team watched platform and business metrics on.", tags: ["dev", "it"] },
-      { text: "Built the entire auth stack on Auth0 (Okta) — production SSO, MFA, full lifecycle.", tags: ["dev", "it"] },
-      { text: "Led the v2 migration to cloud-native SaaS.", tags: ["it", "dev"] },
+      { text: "Implemented Auth0 application identity, including SSO, MFA, and the user lifecycle.", tags: ["dev", "it"] },
+      { text: "Led migration to lower-cost commercial software when the business pivoted to individual coaching, retiring custom development that no longer fit.", tags: ["it", "dev"] },
       { text: "Stack: Nuxt, Vercel, FaunaDB, Stripe, PostgreSQL (Neon), InfluxDB 2.0, Heroku, Go, Grafana, Python, R, reticulate, Hetzner, Dokku/Docker.", tags: ["dev", "it"] },
     ],
   },
@@ -147,12 +162,12 @@ const history: Role[] = [
   {
     id: "chickasaw-floor",
     company: "The Chickasaw Nation",
-    title: "Electronic Gaming Floor Supervisor",
+    title: "Electronic Gaming Floor Supervisor / Attendant",
     location: "Oklahoma",
-    period: "Aug 2008–Aug 2011",
+    period: "Feb 2008–Jun 2012",
     tags: ["leader", "it"],
     highlights: [
-      { text: "Managed 75+ technical-support / customer-service reps at a time on the floor of the world's largest casino.", tags: ["leader", "it"] },
+      { text: "Managed 75+ support and customer-service staff as supervisor from August 2008 to August 2011. Served as attendant before and after that role, then moved to IT in June 2012.", tags: ["leader", "it"] },
       { text: "Real people-management — scheduling, performance management, hiring input, discipline.", tags: ["leader"] },
       { text: "Enforced federal Title 31 (AML reporting) and IRS withholding law daily.", tags: ["leader", "it"] },
     ],
@@ -162,13 +177,13 @@ const history: Role[] = [
 const skills: { group: string; items: { name: string; tags: Tag[] }[] }[] = [
   { group: "Languages", items: [{ name: "TypeScript", tags: ["dev"] }, { name: "JavaScript", tags: ["dev"] }, { name: "PowerShell", tags: ["it"] }, { name: "Go", tags: ["dev", "it"] }, { name: "Python", tags: ["dev", "it"] }, { name: "PHP", tags: ["dev"] }, { name: "R", tags: ["dev"] }, { name: "SQL", tags: ["dev", "it"] }] },
   { group: "Frontend / Web", items: [{ name: "Nuxt 3", tags: ["dev"] }, { name: "Vue 3", tags: ["dev"] }, { name: "Ember.js", tags: ["dev"] }, { name: "React", tags: ["dev"] }, { name: "Tailwind CSS", tags: ["dev"] }, { name: "Web Audio API", tags: ["dev"] }] },
-  { group: "Backend / Platform", items: [{ name: "Node/Express", tags: ["dev"] }, { name: "gRPC / mutual TLS", tags: ["dev", "it"] }, { name: "REST / GraphQL", tags: ["dev"] }, { name: "Better Auth", tags: ["dev"] }, { name: "Stripe", tags: ["dev"] }] },
-  { group: "Cloud / DevOps / Infra", items: [{ name: "Docker/Compose/Dokku", tags: ["dev", "it"] }, { name: "Kubernetes (self-hosted)", tags: ["dev", "it"] }, { name: "CI/CD (GitHub Actions)", tags: ["dev", "it"] }, { name: "Cloudflare (Workers, Tunnels, DNS)", tags: ["dev", "it"] }, { name: "Microsoft Azure", tags: ["it"] }, { name: "NGINX / reverse-proxy hardening", tags: ["it"] }, { name: "Immutable infrastructure", tags: ["it"] }] },
-  { group: "Enterprise IT / Sysadmin", items: [{ name: "Active Directory", tags: ["it"] }, { name: "Group Policy (GPO)", tags: ["it"] }, { name: "SCCM / SCSM", tags: ["it"] }, { name: "Intune", tags: ["it"] }, { name: "ConnectWise Automate (RMM)", tags: ["it"] }, { name: "M365 / Google Workspace admin", tags: ["it"] }, { name: "Okta / Auth0", tags: ["it", "dev"] }] },
+  { group: "Backend / Platform", items: [{ name: "Laravel", tags: ["dev"] }, { name: "Node/Express", tags: ["dev"] }, { name: "gRPC / mutual TLS", tags: ["dev", "it"] }, { name: "REST / GraphQL", tags: ["dev"] }, { name: "Better Auth", tags: ["dev"] }, { name: "Stripe", tags: ["dev"] }] },
+  { group: "Cloud / DevOps / Infra", items: [{ name: "Laravel Cloud", tags: ["dev", "it"] }, { name: "Docker/Compose/Dokku", tags: ["dev", "it"] }, { name: "Kubernetes (self-hosted)", tags: ["dev", "it"] }, { name: "CI/CD (GitHub Actions)", tags: ["dev", "it"] }, { name: "Cloudflare (Workers, Tunnels, DNS)", tags: ["dev", "it"] }, { name: "Microsoft Azure", tags: ["it"] }, { name: "NGINX / reverse-proxy hardening", tags: ["it"] }, { name: "Immutable infrastructure", tags: ["it"] }] },
+  { group: "Enterprise IT / Sysadmin", items: [{ name: "Active Directory", tags: ["it"] }, { name: "Group Policy (GPO)", tags: ["it"] }, { name: "SCCM / SCSM", tags: ["it"] }, { name: "Intune", tags: ["it"] }, { name: "ConnectWise Automate (RMM)", tags: ["it"] }, { name: "M365 / Google Workspace admin", tags: ["it"] }, { name: "Auth0 application identity", tags: ["it", "dev"] }] },
   { group: "Security / Compliance", items: [{ name: "PCI-DSS (2-yr SME)", tags: ["it"] }, { name: "Title 31 / IRS", tags: ["it"] }, { name: "HIPAA", tags: ["it"] }, { name: "NIST / CMMC-adjacent", tags: ["it"] }, { name: "PrintNightmare response", tags: ["it"] }, { name: "Zero-trust ingress", tags: ["it"] }, { name: "IDS/IPS + split-brain DNS", tags: ["it"] }] },
   { group: "Data / ML", items: [{ name: "R + Python (production ML)", tags: ["dev"] }, { name: "reticulate", tags: ["dev"] }, { name: "Grafana", tags: ["dev", "it"] }, { name: "InfluxDB", tags: ["dev", "it"] }] },
   { group: "AI Systems / MLOps", items: [{ name: "Model lifecycle (PyTorch, eval gates, provenance, deployment)", tags: ["dev"] }, { name: "Self-hosted local LLMs (llama.cpp, vLLM)", tags: ["dev", "it"] }, { name: "RAG / embeddings / pgvector", tags: ["dev"] }, { name: "Agentic engineering (Claude Code, Codex)", tags: ["dev", "it", "leader"] }, { name: "AI governance (policy as code, audit records)", tags: ["it", "leader"] }] },
-  { group: "Leadership", items: [{ name: "Hired + led 6 engineers", tags: ["leader"] }, { name: "Managed 75+ reports", tags: ["leader"] }, { name: "Code review / mentoring", tags: ["leader", "dev"] }, { name: "Vendor management", tags: ["leader"] }, { name: "P&L ownership", tags: ["leader"] }] },
+  { group: "Leadership", items: [{ name: "Recruited 4; led a 6-person team", tags: ["leader"] }, { name: "Managed 75+ reports", tags: ["leader"] }, { name: "Code review / mentoring", tags: ["leader", "dev"] }, { name: "Vendor management", tags: ["leader"] }, { name: "P&L ownership", tags: ["leader"] }] },
 ];
 
 const lenses = [
@@ -210,7 +225,7 @@ const profileSchema = {
             Open to opportunities
           </p>
           <p class="text-muted-foreground text-sm">
-            Available for fractional, contract, advisory, or the right full-time role.
+            Open to full-time roles in engineering, business systems, and technology operations.
           </p>
         </div>
         <div class="flex flex-wrap items-center gap-3">
@@ -261,7 +276,7 @@ const profileSchema = {
                 <div class="mb-4">
                   <h3 class="text-xl font-bold font-display text-foreground">{role.company}</h3>
                   <div class="text-lg font-medium text-muted-foreground mb-2">{role.title}</div>
-                  <div class="flex items-center gap-3 text-sm font-mono text-muted-foreground">
+                  <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm font-mono text-muted-foreground">
                     <span>{role.period}</span>
                     <span>·</span>
                     <span>{role.location}</span>
@@ -309,7 +324,11 @@ const profileSchema = {
           <ul class="space-y-4">
             <li>
               <div class="font-bold">Mott Community College</div>
-              <div class="text-sm text-muted-foreground">Coursework</div>
+              <div class="text-sm text-muted-foreground">Psychology and music coursework, 2004–2005 (two semesters)</div>
+            </li>
+            <li>
+              <div class="font-bold">Lapeer County Vocational Technical School</div>
+              <div class="text-sm text-muted-foreground">Electronics Engineering coursework, 2001–2002 (one year)</div>
             </li>
             <li>
               <div class="font-bold">Lapeer East High School</div>
@@ -319,12 +338,17 @@ const profileSchema = {
         </div>
 
         <div>
-          <h2 class="text-2xl font-bold font-display border-b border-border pb-4 mb-6">Certifications</h2>
+          <h2 class="text-2xl font-bold font-display border-b border-border pb-4 mb-6">Professional Development</h2>
           <ul class="space-y-4">
             <li>
-              <div class="font-bold">CompTIA A+</div>
-              <div class="text-sm text-muted-foreground mb-1">University of North Texas testing center</div>
+              <div class="font-bold">CompTIA A+ — earned 2015</div>
+              <div class="text-sm text-muted-foreground mb-1">CompTIA</div>
               <div class="text-xs font-mono text-muted-foreground">Feb 2015</div>
+            </li>
+            <li>
+              <div class="font-bold">Learn to Code with Ruby</div>
+              <div class="text-sm text-muted-foreground mb-1">Udemy</div>
+              <div class="text-xs font-mono text-muted-foreground">Sep 2024</div>
             </li>
             <li>
               <div class="font-bold">Programming for Everybody (Python)</div>
