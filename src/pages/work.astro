@@ -17,39 +17,12 @@ interface Project {
 
 const projects: Project[] = [
   {
-    id: "cathode",
-    title: "Cathode",
-    url: "https://cathodeaudio.com",
+    id: "betterlife",
+    title: "BetterLife member platform",
     description:
-      "A desktop application for designing and playing guitar-amplifier circuits, combining circuit simulation with a neural power-stage model in C++/JUCE. I directed development with Claude Code doing most implementation, guiding architecture, integration, and acceptance. We traced a failed model retrain to flawed training data and reached 0.48% holdout error against a 2% limit, then checked real-time audio performance. Pre-launch.",
-    stack: ["C++", "JUCE", "Real-time DSP", "PyTorch", "React", "Nuxt 4", "Cloudflare Workers", "Neon + Drizzle"],
-    tags: ["dev", "leader"],
-  },
-  {
-    id: "margin-check",
-    title: "margin-check.com",
-    url: "https://margin-check.com",
-    description:
-      "Profit calculations for Etsy sellers, using their CSV exports to account for listing, transaction, processing, and advertising fees. I conceived the product and directed AI-assisted implementation, owning the architecture, review, and acceptance criteria. Development is complete; the product is pre-launch.",
-    stack: ["Next.js 16", "Cloudflare Workers", "Neon + Drizzle", "Better Auth", "Stripe", "Inngest"],
-    tags: ["dev"],
-  },
-  {
-    id: "potluck-planner",
-    title: "potluck-planner.com",
-    url: "https://potluck-planner.com",
-    description:
-      "Event coordination for hosts and guests: invitations, RSVPs, dish signups, dietary restrictions, reminders, and shared-cost contributions. I conceived the service and directed AI agents through implementation, then reviewed, integrated, and validated the application. I own its architecture and live operation across authentication, payments, background jobs, and cloud infrastructure.",
-    stack: ["Next.js 16", "Better Auth", "Neon + Drizzle", "Cloudflare Workers", "Stripe", "Resend", "Twilio", "Inngest"],
-    tags: ["dev"],
-  },
-  {
-    id: "idea-machine",
-    title: "idea-machine",
-    description:
-      "Research memory that lets an AI agent turn articles, videos, PDFs, and documents into persistent insights with source tracking. I conceived the system and directed its development. PostgreSQL lexical search supports retrieval; the agent handles interpretation and curation, while Python exposes ingestion, persistence, and search tools.",
-    stack: ["Python", "Postgres (Neon)", "SQLite", "trafilatura", "yt-dlp", "cryptography"],
-    tags: ["dev", "it"],
+      "A financial wellness startup's founding platform, built from zero in 2023 when no SaaS product covered its small-group model: application and join flow, matchmaking, member app, payments, and a Go-based sync and reporting layer over PostgreSQL, InfluxDB, and Grafana. I made the stack and architecture decisions, turned stakeholder requirements into Kanban work, reviewed and merged code, and led a six-person team that included four people I recruited. I worked directly in the data scientist's R/Python code to make the matching algorithms production- and cloud-ready and deployed them on Hetzner with Docker/Dokku. The business was profitable in year one. When it pivoted to individual coaching, I led the migration to lower-cost commercial software; I've been advisory since mid-2024.",
+    stack: ["Nuxt", "Vercel", "FaunaDB", "Stripe", "PostgreSQL (Neon)", "InfluxDB 2.0", "Grafana", "Go", "Python", "R", "Docker/Dokku", "Hetzner", "Auth0"],
+    tags: ["dev", "it", "leader"],
   },
   {
     id: "list-at-ease",
@@ -69,21 +42,20 @@ const projects: Project[] = [
     tags: ["it", "dev", "leader"],
   },
   {
-    id: "ez-web-audio",
-    title: "EZ Web Audio",
-    repo: "https://github.com/sethbrasile/ez-web-audio",
-    description: "Framework-agnostic Web Audio API wrapper; modern successor to ember-audio.",
-    stack: ["TypeScript", "Web Audio API"],
-    tags: ["dev"],
+    id: "dkb-automation",
+    title: "Endpoint security & compliance automation (DKBinnovative)",
+    description:
+      "At DKBinnovative I built the automation a managed-services provider ran across 2,500 to 3,200 Windows, Linux, and Mac endpoints for healthcare and manufacturing clients: cybersecurity and compliance tracking, distributed Windows update and upgrade management, and workstation and service tooling built through daily PowerShell development. Go programs orchestrated that tooling and aggregated results into internal and client-facing reports. I moved delivered scripts to a GitHub source-of-truth model that runs them in memory from reviewed sources, and I led the PrintNightmare response: PowerShell and Group Policy mitigations first, then a centralized print-management rollout that removed traditional print servers from managed environments.",
+    stack: ["PowerShell", "Go", "ConnectWise Automate", "Group Policy", "Intune", "Windows Server"],
+    tags: ["it", "dev", "leader"],
   },
   {
-    id: "justice-for-us",
-    title: "Justice For Us — White House SXSL (2016)",
-    url: "https://techcrunch.com/2016/10/03/white-houses-sxsl-shows-what-its-like-to-be-in-the-criminal-justice-system/",
+    id: "chickasaw-pci",
+    title: "Payment-device tracking for PCI compliance (Chickasaw Nation)",
     description:
-      "Engineering contributor on an interactive sentencing exhibit at the White House South by South Lawn.",
-    stack: ["JavaScript", "Ember", "ember-audio"],
-    tags: ["dev"],
+      "The Chickasaw Nation runs payment and point-of-sale hardware across casinos, convenience stores, gas stations, restaurants, and boutique retail. As Retail Systems Analyst, and one of two people the enterprise relied on for that domain, I designed and implemented enterprise-wide tracking of payment and POS devices and their locations, across hundreds of units, to support PCI compliance. I spent two years as the PCI-DSS subject-matter expert and lead audit preparer, vetted hardware and software vendors, and led stakeholders through selection, planning, and implementation of retail-systems projects.",
+    stack: ["PCI-DSS", "POS systems", "Payment terminals", "Asset tracking", "Vendor evaluation"],
+    tags: ["it", "leader"],
   },
   {
     id: "msp-rmm",
@@ -101,6 +73,58 @@ const projects: Project[] = [
     stack: ["Fedora CoreOS", "NGINX", "fail2ban", "Cloudflare"],
     tags: ["it"],
   },
+  {
+    id: "potluck-planner",
+    title: "potluck-planner.com",
+    url: "https://potluck-planner.com",
+    description:
+      "Event coordination for hosts and guests: invitations, RSVPs, dish signups, dietary restrictions, reminders, and shared-cost contributions. I conceived the service and directed AI agents through implementation, then reviewed, integrated, and validated the application. I own its architecture and live operation across authentication, payments, background jobs, and cloud infrastructure.",
+    stack: ["Next.js 16", "Better Auth", "Neon + Drizzle", "Cloudflare Workers", "Stripe", "Resend", "Twilio", "Inngest"],
+    tags: ["dev"],
+  },
+  {
+    id: "cathode",
+    title: "Cathode",
+    url: "https://cathodeaudio.com",
+    description:
+      "A desktop application for designing and playing guitar-amplifier circuits, combining circuit simulation with a neural power-stage model in C++/JUCE. I directed development with Claude Code doing most implementation, guiding architecture, integration, and acceptance. We traced a failed model retrain to flawed training data and reached 0.48% holdout error against a 2% limit, then checked real-time audio performance. Pre-launch.",
+    stack: ["C++", "JUCE", "Real-time DSP", "PyTorch", "React", "Nuxt 4", "Cloudflare Workers", "Neon + Drizzle"],
+    tags: ["dev", "leader"],
+  },
+  {
+    id: "ez-web-audio",
+    title: "EZ Web Audio",
+    repo: "https://github.com/sethbrasile/ez-web-audio",
+    description: "Framework-agnostic Web Audio API wrapper; modern successor to ember-audio.",
+    stack: ["TypeScript", "Web Audio API"],
+    tags: ["dev"],
+  },
+  {
+    id: "justice-for-us",
+    title: "Justice For Us — White House SXSL (2016)",
+    url: "https://techcrunch.com/2016/10/03/white-houses-sxsl-shows-what-its-like-to-be-in-the-criminal-justice-system/",
+    description:
+      "Engineering contributor on an interactive sentencing exhibit at the White House South by South Lawn.",
+    stack: ["JavaScript", "Ember", "ember-audio"],
+    tags: ["dev"],
+  },
+  {
+    id: "margin-check",
+    title: "margin-check.com",
+    url: "https://margin-check.com",
+    description:
+      "Profit calculations for Etsy sellers, using their CSV exports to account for listing, transaction, processing, and advertising fees. I conceived the product and directed AI-assisted implementation, owning the architecture, review, and acceptance criteria. Development is complete; the product is pre-launch.",
+    stack: ["Next.js 16", "Cloudflare Workers", "Neon + Drizzle", "Better Auth", "Stripe", "Inngest"],
+    tags: ["dev"],
+  },
+  {
+    id: "idea-machine",
+    title: "idea-machine",
+    description:
+      "Research memory that lets an AI agent turn articles, videos, PDFs, and documents into persistent insights with source tracking. I conceived the system and directed its development. PostgreSQL lexical search supports retrieval; the agent handles interpretation and curation, while Python exposes ingestion, persistence, and search tools.",
+    stack: ["Python", "Postgres (Neon)", "SQLite", "trafilatura", "yt-dlp", "cryptography"],
+    tags: ["dev", "it"],
+  },
 ];
 
 const lenses = [
@@ -116,8 +140,8 @@ const lenses = [
     <header class="mb-12">
       <h1 class="text-4xl md:text-5xl font-bold font-display mb-6 tracking-tight">Projects &amp; Work</h1>
       <p class="text-xl text-muted-foreground leading-relaxed max-w-2xl">
-        A selection of software builds, infrastructure deployments, and automation systems. From
-        zero-to-one SaaS to policy-as-code governance.
+        A selection of software builds, infrastructure deployments, and automation systems. From a
+        startup's founding platform and enterprise endpoint automation to independent SaaS.
       </p>
     </header>
 
