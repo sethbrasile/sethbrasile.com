@@ -27,6 +27,27 @@ for (const p of pages) {
   });
 }
 
+test("work page links the tee store and the TechCrunch article", async ({ page }) => {
+  await page.goto("/work");
+
+  const tees = page.getByRole("link", { name: "Graphic Tees Co.", exact: true });
+  await expect(tees).toHaveAttribute("href", "https://graphicteesco.com/");
+  await expect(tees).toHaveAttribute("rel", "noopener");
+
+  const article = page.getByRole("link", { name: "TechCrunch", exact: true });
+  await expect(article).toHaveAttribute(
+    "href",
+    "https://techcrunch.com/2016/10/03/white-houses-sxsl-shows-what-its-like-to-be-in-the-criminal-justice-system/",
+  );
+  await expect(article).toHaveAttribute("rel", "noopener");
+
+  // The corner icon on Justice For Us points at the same article, with a name that says so.
+  await expect(page.getByRole("link", { name: "TechCrunch article about Justice For Us" })).toHaveAttribute(
+    "href",
+    "https://techcrunch.com/2016/10/03/white-houses-sxsl-shows-what-its-like-to-be-in-the-criminal-justice-system/",
+  );
+});
+
 test("404 page serves on unknown route", async ({ page }) => {
   await page.goto("/this-route-does-not-exist");
   await expect(page.locator("h1")).toContainText("didn't put it back");

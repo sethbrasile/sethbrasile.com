@@ -9,8 +9,12 @@ interface Project {
   id: string;
   title: string;
   url?: string;
+  /** Accessible name for the external-link icon. Defaults to "Visit {title}". */
+  urlLabel?: string;
   repo?: string;
   description: string;
+  /** When set, rendered in place of description so one phrase can be a followed link. */
+  descriptionParts?: { text: string; href?: string }[];
   stack: string[];
   tags: ("dev" | "it" | "leader")[];
 }
@@ -74,6 +78,21 @@ const projects: Project[] = [
     tags: ["it"],
   },
   {
+    id: "graphic-tees-co",
+    title: "Graphic Tees Co.",
+    url: "https://graphicteesco.com/",
+    description:
+      "Graphic Tees Co. is PPMC's shop for original graphic tees and hoodies, printed to order. I worked on it with other people at PPMC, and a teammate now runs the store.",
+    descriptionParts: [
+      { text: "Graphic Tees Co.", href: "https://graphicteesco.com/" },
+      {
+        text: " is PPMC's shop for original graphic tees and hoodies, printed to order. I worked on it with other people at PPMC, and a teammate now runs the store.",
+      },
+    ],
+    stack: ["Shopify"],
+    tags: ["dev"],
+  },
+  {
     id: "potluck-planner",
     title: "potluck-planner.com",
     url: "https://potluck-planner.com",
@@ -103,8 +122,19 @@ const projects: Project[] = [
     id: "justice-for-us",
     title: "Justice For Us — White House SXSL (2016)",
     url: "https://techcrunch.com/2016/10/03/white-houses-sxsl-shows-what-its-like-to-be-in-the-criminal-justice-system/",
+    urlLabel: "TechCrunch article about Justice For Us",
     description:
-      "Engineering contributor on an interactive sentencing exhibit at the White House South by South Lawn.",
+      "Engineering contributor on an interactive sentencing exhibit at the White House South by South Lawn. TechCrunch covered the exhibit.",
+    descriptionParts: [
+      {
+        text: "Engineering contributor on an interactive sentencing exhibit at the White House South by South Lawn. ",
+      },
+      {
+        text: "TechCrunch",
+        href: "https://techcrunch.com/2016/10/03/white-houses-sxsl-shows-what-its-like-to-be-in-the-criminal-justice-system/",
+      },
+      { text: " covered the exhibit." },
+    ],
     stack: ["JavaScript", "Ember", "ember-audio"],
     tags: ["dev"],
   },
@@ -188,7 +218,7 @@ const lenses = [
                     target="_blank"
                     rel="noopener noreferrer"
                     class="text-muted-foreground hover:text-foreground transition-colors p-2 bg-secondary rounded-full"
-                    aria-label={`Visit ${project.title}`}
+                    aria-label={project.urlLabel ?? `Visit ${project.title}`}
                   >
                     <Icon name="lucide:arrow-up-right" class="size-[18px]" aria-hidden="true" />
                   </a>
@@ -196,7 +226,26 @@ const lenses = [
               </div>
             </div>
 
-            <p class="text-muted-foreground text-lg leading-relaxed mb-8">{project.description}</p>
+            <p class="text-muted-foreground text-lg leading-relaxed mb-8">
+              {
+                project.descriptionParts
+                  ? project.descriptionParts.map((part) =>
+                      part.href ? (
+                        <a
+                          href={part.href}
+                          target="_blank"
+                          rel="noopener"
+                          class="text-foreground underline underline-offset-2 decoration-muted-foreground/50 hover:decoration-foreground"
+                        >
+                          {part.text}
+                        </a>
+                      ) : (
+                        part.text
+                      ),
+                    )
+                  : project.description
+              }
+            </p>
 
             <div class="flex items-center justify-between border-t border-border pt-6">
               <div class="flex flex-wrap gap-2 font-mono text-sm">

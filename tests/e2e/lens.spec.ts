@@ -5,9 +5,9 @@ test.describe("Work page lens filter", () => {
     await page.goto("/work");
     const cards = page.locator(".project-card");
 
-    // "All" pressed by default → 13 cards.
-    await expect(cards).toHaveCount(13);
-    await expect(page.locator(".project-card:visible")).toHaveCount(13);
+    // "All" pressed by default → 14 cards.
+    await expect(cards).toHaveCount(14);
+    await expect(page.locator(".project-card:visible")).toHaveCount(14);
 
     await page.locator('.lens-btn[data-lens="it"]').click();
     await expect(page.locator(".project-card:visible")).toHaveCount(8);
@@ -18,7 +18,7 @@ test.describe("Work page lens filter", () => {
     await expect(page.locator(".project-card:visible")).toHaveCount(5);
 
     await page.locator('.lens-btn[data-lens="all"]').click();
-    await expect(page.locator(".project-card:visible")).toHaveCount(13);
+    await expect(page.locator(".project-card:visible")).toHaveCount(14);
   });
 });
 
